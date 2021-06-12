@@ -67,13 +67,12 @@ public class Player : MonoBehaviour
                    
             }
 
-            if ((endTouchPosition.x > startTouchPosition.x) && transform.position.y < maxheight)
-            {
-                
-            }
+            
 
 
         }
+
+        
 
        
     }

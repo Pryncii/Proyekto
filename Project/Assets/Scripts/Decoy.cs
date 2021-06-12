@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-
-public class Playe : MonoBehaviour
+public class Decoy : MonoBehaviour
 
 {
     private Vector2 startTouchPosition, endTouchPosition;
@@ -39,7 +38,6 @@ public class Playe : MonoBehaviour
 
 
         
-
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             startTouchPosition = Input.GetTouch(0).position;
 

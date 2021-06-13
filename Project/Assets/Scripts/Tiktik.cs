@@ -6,6 +6,8 @@ public class Tiktik : MonoBehaviour
 {
 
     public float speed;
+    public float movement;
+    public float startmove;
     private Transform target;
     public float minheight;
     private float wait;
@@ -20,9 +22,10 @@ public class Tiktik : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        wait = 1;
+        
         target = GameObject.FindGameObjectWithTag("Playe").GetComponent<Transform>();
             Instantiate(effect, transform.position, Quaternion.identity);
+        tiktikanim.SetBool("Moving", true);
     }
 
     // Update is called once per frame
@@ -32,22 +35,33 @@ public class Tiktik : MonoBehaviour
         
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
+        
+           
+        
 
-        if (wait > 0)
+     
+
+
+
+
+            if (wait > 0)
         {
             wait -= Time.deltaTime;
+           
         }
 
         if (wait <= 0)
         {
-            
+
+
 
             Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatsenemy);
             for (int i = 0; i <enemiesToDamage.Length; i++)
             {
+                
                 tiktikanim.SetTrigger("Tiktikswipe");
                 enemiesToDamage[i].GetComponent<Player>().health -= damage;
-               
+                tiktikanim.SetBool("Moving", false);
             }
             wait = startattack;
         }
@@ -60,4 +74,6 @@ public class Tiktik : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
+
+    
 }

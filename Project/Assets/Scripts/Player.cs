@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public float speed;
     private float moveduration = 0.01f;
     public int health = 100;
+    public Animator target;
 
 
     // Start is called before the first frame update
@@ -54,9 +55,11 @@ public class Player : MonoBehaviour
             {
                
                 targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
-                   
-                
-                
+
+                target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Animator>();
+
+                target.SetBool("Moving", true);
+
             }
 
             if ((endTouchPosition.y > startTouchPosition.y) && transform.position.y < maxheight)
@@ -64,7 +67,11 @@ public class Player : MonoBehaviour
             {
                
                 targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                   
+
+                target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Animator>();
+
+                target.SetBool("Moving", true);
+
             }
 
             

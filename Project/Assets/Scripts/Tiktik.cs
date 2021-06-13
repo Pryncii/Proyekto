@@ -18,6 +18,8 @@ public class Tiktik : MonoBehaviour
     public LayerMask whatsenemy;
     public int damage;
     public Animator tiktikanim;
+    public Animator camAnim;
+
 
     // Start is called before the first frame update
     void Start()
@@ -61,7 +63,11 @@ public class Tiktik : MonoBehaviour
                 
                 tiktikanim.SetTrigger("Tiktikswipe");
                 enemiesToDamage[i].GetComponent<Player>().health -= damage;
-                tiktikanim.SetBool("Moving", false);
+                
+                camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+
+                camAnim.SetTrigger("shake");
+
             }
             wait = startattack;
         }

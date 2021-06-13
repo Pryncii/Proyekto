@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Playe
   - Enemy
+  - despawn
+  - ScreenShake
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,7 @@ public class AttackSarangay : MonoBehaviour
 {
     public int damage = 50;
     public float speed;
+    public Animator camAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,14 @@ public class AttackSarangay : MonoBehaviour
         {
             other.GetComponent<Player>().health -= damage;
             Debug.Log(other.GetComponent<Player>().health);
+            camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+
+            camAnim.SetTrigger("shake");
+        }
+
+        if (other.CompareTag("despawn"))
+        {
+            Destroy(gameObject);
         }
     }
 }

@@ -7,10 +7,13 @@ public class Kiwig : MonoBehaviour
     public int damage = 25;
     public float speed;
     public GameObject effect;
+    public Animator camAnim;
+
     // Start is called before the first frame update
     void Start()
     {
         Instantiate(effect, transform.position, Quaternion.identity);
+        
     }
 
     // Update is called once per frame
@@ -25,6 +28,16 @@ public class Kiwig : MonoBehaviour
         {
             other.GetComponent<Player>().health -= damage;
             Debug.Log(other.GetComponent<Player>().health);
+
+           camAnim  = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+
+            camAnim.SetTrigger("shake");
+
+        }
+
+        if (other.CompareTag("despawn"))
+        {
+            Destroy(gameObject);
         }
     }
 }

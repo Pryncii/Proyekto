@@ -75,5 +75,12 @@ public class Tiktik : MonoBehaviour
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 
-    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Playe"))
+        {
+            tiktikanim.SetBool("Moving", false);
+        }
+    }
+
 }

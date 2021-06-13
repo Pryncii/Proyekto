@@ -62,11 +62,10 @@ public class Tiktik : MonoBehaviour
             {
                 
                 tiktikanim.SetTrigger("Tiktikswipe");
-                enemiesToDamage[i].GetComponent<Player>().health -= damage;
-                
-                camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 
-                camAnim.SetTrigger("shake");
+                StartCoroutine(Timedelay());
+                    
+                
 
             }
             wait = startattack;
@@ -87,6 +86,24 @@ public class Tiktik : MonoBehaviour
         {
             tiktikanim.SetBool("Moving", false);
         }
+    }
+
+    IEnumerator Timedelay()
+    { 
+      yield return new WaitForSeconds(0.3f);
+
+        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatsenemy);
+        for (int i = 0; i < enemiesToDamage.Length; i++)
+
+        {
+            enemiesToDamage[i].GetComponent<Player>().health -= damage;
+
+            camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+
+            camAnim.SetTrigger("shake");
+
+        }
+
     }
 
 }

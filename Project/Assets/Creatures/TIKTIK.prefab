@@ -202,7 +202,7 @@ MonoBehaviour:
   startattack: 1
   effect: {fileID: 4920871286349836578, guid: 14dbd3d47618cad40afbdd1d687092cd, type: 3}
   attackPos: {fileID: 8611499807838077445}
-  attackRange: 0.4
+  attackRange: 0.2
   whatsenemy:
     serializedVersion: 2
     m_Bits: 8

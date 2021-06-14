@@ -446,7 +446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1723734713088917846, guid: ad975eae62d89a54d90754710beb8a96, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1723734713088917846, guid: ad975eae62d89a54d90754710beb8a96, type: 3}
       propertyPath: m_LocalPosition.x
@@ -641,7 +641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1723734713088917846, guid: ad975eae62d89a54d90754710beb8a96, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1723734713088917846, guid: ad975eae62d89a54d90754710beb8a96, type: 3}
       propertyPath: m_LocalPosition.x
@@ -796,7 +796,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2085472966
 MonoBehaviour:
@@ -913,7 +913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1723734713088917846, guid: ad975eae62d89a54d90754710beb8a96, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1723734713088917846, guid: ad975eae62d89a54d90754710beb8a96, type: 3}
       propertyPath: m_LocalPosition.x
@@ -982,7 +982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1723734713088917846, guid: ad975eae62d89a54d90754710beb8a96, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1723734713088917846, guid: ad975eae62d89a54d90754710beb8a96, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1237,6 +1237,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
+      propertyPath: Kiwig
+      value: 
+      objectReference: {fileID: 9062875879388123632, guid: 5d234b0a8c64c2c4e8ca89ea2c0ff45e, type: 3}
+    - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
       propertyPath: attackPos
       value: 
       objectReference: {fileID: 2049830956}
@@ -1247,6 +1251,18 @@ PrefabInstance:
     - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
       propertyPath: startattack
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
+      propertyPath: kiwig.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
+      propertyPath: AttackSarangay
+      value: 
+      objectReference: {fileID: 7546616614103525032, guid: 47fd4dc119390f04ca5f99dcc65e99f1, type: 3}
+    - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
+      propertyPath: sarangay.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 5470871080337526187, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
       propertyPath: m_RootOrder

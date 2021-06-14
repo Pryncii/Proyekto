@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4774041421873782953}
   - component: {fileID: 3574962949382720075}
   - component: {fileID: 1492320813903596040}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: BULLCHARGE
   m_TagString: Untagged
   m_Icon: {fileID: 0}

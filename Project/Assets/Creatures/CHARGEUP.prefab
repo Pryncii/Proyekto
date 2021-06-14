@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 7024098026878626005}
   - component: {fileID: 7024098026878626004}
   - component: {fileID: 5044572091507788940}
-  m_Layer: 0
+  - component: {fileID: 6614170146358785958}
+  m_Layer: 7
   m_Name: CHARGEUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,3 +119,33 @@ MonoBehaviour:
   duration: 11
   charge: {fileID: 7546616614103525032, guid: 47fd4dc119390f04ca5f99dcc65e99f1, type: 3}
   effect: {fileID: 4390342571436972500, guid: 99c2c0db9b501e142a0aa335febe57d0, type: 3}
+  damage: 50
+  camAnim: {fileID: 0}
+  health: 100
+  anim: {fileID: 7024098026878626004}
+--- !u!61 &6614170146358785958
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024098026878625995}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.9300003, y: 7.106934}
+    newSize: {x: 4.9300003, y: 7.106934}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.9300003, y: 7.106934}
+  m_EdgeRadius: 0

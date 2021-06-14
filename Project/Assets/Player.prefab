@@ -128,12 +128,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e376e67ae289c541ac32420720bf304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatsenemy:
+  kiwig:
     serializedVersion: 2
     m_Bits: 64
+  sarangay:
+    serializedVersion: 2
+    m_Bits: 128
   attackRange: 1
   attackPos: {fileID: 6117141765191694134}
-  startattack: 1
+  startattack: 20
   Yincrement: 2
   maxheight: 4
   minheight: -4

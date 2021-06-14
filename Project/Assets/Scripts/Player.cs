@@ -12,7 +12,8 @@ public class Player : MonoBehaviour
     private Vector2 startTouchPosition, endTouchPosition;
     private Vector3 startPlayerPosition, endPlayerPosition;
     private float movetime;
-    public LayerMask whatsenemy;
+    public LayerMask kiwig;
+    public LayerMask sarangay;
     public float attackRange;
     public Transform attackPos;
     private float wait;
@@ -59,20 +60,29 @@ public class Player : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Space))
             {
-                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatsenemy);
+                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, kiwig);
                 for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
 
 
 
                     StartCoroutine(Timedelay());
-                    StartCoroutine(Bull());
+                   
 
 
 
 
                 }
-                wait = startattack;
+
+                Collider2D[] ToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, sarangay);
+                for (int a = 0; a < ToDamage.Length; a++)
+                {
+                    StartCoroutine(Bull());
+                }
+
+
+
+                    wait = startattack;
 
             }
         }
@@ -134,7 +144,7 @@ public class Player : MonoBehaviour
 
         
             
-       Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatsenemy);
+       Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, kiwig);
         for (int i = 0; i < enemiesToDamage.Length; i++)
 
         {
@@ -159,13 +169,13 @@ public class Player : MonoBehaviour
 
 
 
-        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatsenemy);
+        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, sarangay);
         for (int a = 0; a < enemiesToDamage.Length; a++)
 
         {
 
 
-            enemiesToDamage[a].GetComponent<AttackSarangay>().health -= damage;
+            enemiesToDamage[a].GetComponent<Sarangay>().health -= damage;
 
             camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 

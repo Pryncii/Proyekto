@@ -17,6 +17,7 @@ public class Tiktik : MonoBehaviour
     public float attackRange;
     public LayerMask whatsenemy;
     public int damage;
+    public int health = 100;
     public Animator tiktikanim;
     public Animator camAnim;
 
@@ -37,16 +38,15 @@ public class Tiktik : MonoBehaviour
         
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
-        
-           
-        
+        if (health <= 0)
+        {
+            Destroy(gameObject);
 
-     
-
-
+        }
 
 
-            if (wait > 0)
+
+        if (wait > 0)
         {
             wait -= Time.deltaTime;
            

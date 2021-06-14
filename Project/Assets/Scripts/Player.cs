@@ -12,15 +12,20 @@ public class Player : MonoBehaviour
     private Vector2 startTouchPosition, endTouchPosition;
     private Vector3 startPlayerPosition, endPlayerPosition;
     private float movetime;
-  
+    public LayerMask whatsenemy;
+    public float attackRange;
+    public Transform attackPos;
+    private float wait;
+    public float startattack;
     private Vector2 targetPos;
     public float Yincrement;
     public float maxheight;
     public float minheight;
     public float speed;
-    private float moveduration = 0.01f;
     public int health = 100;
     public Animator target;
+    public int damage;
+    public Animator camAnim;
 
 
     // Start is called before the first frame update
@@ -41,6 +46,36 @@ public class Player : MonoBehaviour
 
 
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+
+        if (wait > 0)
+        {
+            wait -= Time.deltaTime;
+
+        }
+
+        if (wait <= 0)
+        {
+
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatsenemy);
+                for (int i = 0; i < enemiesToDamage.Length; i++)
+                {
+
+
+
+                    StartCoroutine(Timedelay());
+                    StartCoroutine(Bull());
+
+
+
+
+                }
+                wait = startattack;
+
+            }
+        }
 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             startTouchPosition = Input.GetTouch(0).position;
@@ -81,8 +116,69 @@ public class Player : MonoBehaviour
 
         
 
+        
+
        
+
     }
 
-   
-}
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
+
+    IEnumerator Timedelay()
+    {
+        yield return new WaitForSeconds(0.01f);
+
+        
+            
+       Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatsenemy);
+        for (int i = 0; i < enemiesToDamage.Length; i++)
+
+        {
+
+
+            enemiesToDamage[i].GetComponent<Kiwig>().health -= damage;
+
+            camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+
+            camAnim.SetTrigger("shake");
+
+
+        }
+
+
+
+    }
+
+    IEnumerator Bull()
+    {
+        yield return new WaitForSeconds(0.01f);
+
+
+
+        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatsenemy);
+        for (int a = 0; a < enemiesToDamage.Length; a++)
+
+        {
+
+
+            enemiesToDamage[a].GetComponent<AttackSarangay>().health -= damage;
+
+            camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+
+            camAnim.SetTrigger("shake");
+
+
+        }
+
+    }
+
+
+
+
+
+
+    }

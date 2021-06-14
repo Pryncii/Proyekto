@@ -7,6 +7,7 @@ public class AttackSarangay : MonoBehaviour
     public int damage = 50;
     public float speed;
     public Animator camAnim;
+    public int health = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,12 @@ public class AttackSarangay : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -35,5 +42,7 @@ public class AttackSarangay : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        
     }
 }

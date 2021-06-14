@@ -8,6 +8,7 @@ public class Kiwig : MonoBehaviour
     public float speed;
     public GameObject effect;
     public Animator camAnim;
+    public int health = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,13 @@ public class Kiwig : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            Instantiate(effect, transform.position, Quaternion.identity);
+
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)

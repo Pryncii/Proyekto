@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7922600011482398928}
   - component: {fileID: -3673304823034083446}
   - component: {fileID: 7951264305648247782}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TIKTIK
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -207,5 +207,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   damage: 20
+  health: 100
   tiktikanim: {fileID: 608002143427402051}
   camAnim: {fileID: 0}

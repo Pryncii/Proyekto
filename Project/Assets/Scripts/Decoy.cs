@@ -16,7 +16,7 @@ public class Decoy : MonoBehaviour
     public float maxheight;
     public float minheight;
     public float speed;
-    private float moveduration = 0.01f;
+    
     public int health = 100;
 
 

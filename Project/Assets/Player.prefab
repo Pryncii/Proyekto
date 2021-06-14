@@ -136,13 +136,12 @@ MonoBehaviour:
     m_Bits: 128
   attackRange: 1
   attackPos: {fileID: 6117141765191694134}
-  startattack: 20
+  startattack: 3
   Yincrement: 2
   maxheight: 4
   minheight: -4
   speed: 25
   health: 100
-  target: {fileID: 0}
   damage: 100
   camAnim: {fileID: 0}
 --- !u!50 &5470871080337526186

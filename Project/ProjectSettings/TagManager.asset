@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - despawn
   - ScreenShake
+  - bg
+  - Tiktik
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - UI
   - Enemy
   - Sarangay
-  - 
+  - Tiktik
   - 
   - 
   - 

@@ -20,7 +20,8 @@ public class Tiktik : MonoBehaviour
     public int health = 100;
     public Animator tiktikanim;
     public Animator camAnim;
-
+    private Vector2 startTouchPosition, endTouchPosition;
+    private Vector3 startPlayerPosition, endPlayerPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +72,42 @@ public class Tiktik : MonoBehaviour
             wait = startattack;
         }
 
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            startTouchPosition = Input.GetTouch(0).position;
+
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        {
+            endTouchPosition = Input.GetTouch(0).position;
+
+
+
+            if ((endTouchPosition.y < startTouchPosition.y))
+            {
+
+                tiktikanim.SetBool("Moving", true);
+
+
+
+
+            }
+
+            if ((endTouchPosition.y > startTouchPosition.y))
+
+            {
+
+                tiktikanim.SetBool("Moving", true);
+
+
+
+
+            }
+
+
+
+
+
+        }
+
 
     }
 
@@ -86,6 +123,8 @@ public class Tiktik : MonoBehaviour
         {
             tiktikanim.SetBool("Moving", false);
         }
+
+      
     }
 
     IEnumerator Timedelay()

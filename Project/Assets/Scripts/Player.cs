@@ -100,10 +100,7 @@ public class Player : MonoBehaviour
             {
                
                 targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
-
-                target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Animator>();
-
-                target.SetBool("Moving", true);
+  
 
             }
 
@@ -113,13 +110,44 @@ public class Player : MonoBehaviour
                
                 targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
 
-                target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Animator>();
-
-                target.SetBool("Moving", true);
-
+    
             }
 
-            
+            if (wait <= 0)
+            {
+
+
+                if ((endTouchPosition.x > startTouchPosition.x))
+                {
+                    Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, kiwig);
+                    for (int i = 0; i < enemiesToDamage.Length; i++)
+                    {
+
+
+
+                        StartCoroutine(Timedelay());
+
+
+
+
+
+                    }
+
+                    Collider2D[] ToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, sarangay);
+                    for (int a = 0; a < ToDamage.Length; a++)
+                    {
+                        StartCoroutine(Bull());
+                    }
+
+
+
+                    wait = startattack;
+
+                }
+            }
+
+
+
 
 
         }

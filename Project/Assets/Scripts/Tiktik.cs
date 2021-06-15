@@ -42,6 +42,7 @@ public class Tiktik : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            Instantiate(effect, transform.position, Quaternion.identity);
 
         }
 

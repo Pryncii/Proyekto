@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     private float movetime;
     public LayerMask kiwig;
     public LayerMask sarangay;
+    public LayerMask tiktik;
     public float attackRange;
     public Transform attackPos;
     private float wait;
@@ -117,7 +118,7 @@ public class Player : MonoBehaviour
             {
 
 
-                if ((endTouchPosition.x > startTouchPosition.x))
+                if ((endTouchPosition.x >= startTouchPosition.x) && (endTouchPosition.y == startTouchPosition.y))
                 {
                     Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, kiwig);
                     for (int i = 0; i < enemiesToDamage.Length; i++)
@@ -137,6 +138,12 @@ public class Player : MonoBehaviour
                     for (int a = 0; a < ToDamage.Length; a++)
                     {
                         StartCoroutine(Bull());
+                    }
+
+                    Collider2D[] TikDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, tiktik);
+                    for (int a = 0; a < TikDamage.Length; a++)
+                    {
+                        StartCoroutine(Tik());
                     }
 
 
@@ -214,9 +221,32 @@ public class Player : MonoBehaviour
 
     }
 
+    IEnumerator Tik()
+    {
+        yield return new WaitForSeconds(0.01f);
 
 
 
+        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, tiktik);
+        for (int t = 0; t < enemiesToDamage.Length; t++)
 
+        {
+
+
+            enemiesToDamage[t].GetComponent<Tiktik>().health -= damage;
+
+            camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+
+            camAnim.SetTrigger("shake");
+
+
+        }
 
     }
+
+
+
+
+
+
+}

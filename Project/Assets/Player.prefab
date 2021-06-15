@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4391085642674144010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 1.5, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5470871080337526187}
@@ -134,7 +134,10 @@ MonoBehaviour:
   sarangay:
     serializedVersion: 2
     m_Bits: 128
-  attackRange: 1
+  tiktik:
+    serializedVersion: 2
+    m_Bits: 256
+  attackRange: 0.8
   attackPos: {fileID: 6117141765191694134}
   startattack: 3
   Yincrement: 2
@@ -142,6 +145,7 @@ MonoBehaviour:
   minheight: -4
   speed: 25
   health: 100
+  target: {fileID: 0}
   damage: 100
   camAnim: {fileID: 0}
 --- !u!50 &5470871080337526186

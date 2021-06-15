@@ -1225,7 +1225,7 @@ MonoBehaviour:
   - {fileID: 2242061137450721822, guid: b8a51715d30b6444c82f3d7dc09e0abc, type: 3}
   - {fileID: 4536039513761259021, guid: f7e73e17e98f28e40943c59b894d9a55, type: 3}
   starttimebtwspawn: 1.5
-  decreasetime: 0.05
+  decreasetime: 0.02
   minTime: 0.9
 --- !u!1001 &2088241290
 PrefabInstance:
@@ -1734,7 +1734,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6117141765191694134, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117141765191694134, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}

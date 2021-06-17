@@ -121,7 +121,9 @@ MonoBehaviour:
   speed: 7
   effect: {fileID: 4052406669450685890, guid: a732c911e3565c24180ac85c8ca30eeb, type: 3}
   camAnim: {fileID: 0}
-  health: 100
+  health: 200
+  startdazetime: 1
+  kiki: {fileID: 9062875879388123633}
 --- !u!50 &5935311635697184265
 Rigidbody2D:
   serializedVersion: 4

@@ -14,6 +14,7 @@ public class Manananngal : MonoBehaviour
     public Transform shotPoint;
     public int damage = 20;
     public Animator camAnim;
+    public int health = 100;
 
 
     // Start is called before the first frame update
@@ -28,7 +29,12 @@ public class Manananngal : MonoBehaviour
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-        
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            Instantiate(effect, transform.position, Quaternion.identity);
+
+        }
     }
 
     IEnumerator Attack()
@@ -66,6 +72,13 @@ public class Manananngal : MonoBehaviour
 
             camAnim.SetTrigger("shake");
 
+        }
+
+
+        if (other.CompareTag("leg"))
+        {
+            Destroy(gameObject);
+            Instantiate(effect, transform.position, Quaternion.identity);
         }
 
         if (other.CompareTag("despawn"))

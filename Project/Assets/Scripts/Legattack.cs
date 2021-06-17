@@ -8,7 +8,7 @@ public class Legattack : MonoBehaviour
     public float speed;
     public GameObject effect;
     public Animator camAnim;
-    public int health = 100;
+    public int health = 200;
 
 
     // Start is called before the first frame update
@@ -31,7 +31,16 @@ public class Legattack : MonoBehaviour
 
         if (health == 50)
         {
-           transform.Translate(Vector2.right * speed * Time.deltaTime * 1.25f);
+           transform.Translate(Vector2.right * speed * Time.deltaTime * 1.2f);
+            transform.localScale = new Vector3(-0.27f, 0.27f, 2f);
+
+        }
+
+        if (health == 100)
+        {
+            transform.Translate(Vector2.right * speed * Time.deltaTime * 3f);
+            transform.localScale = new Vector3(-0.27f, 0.27f, 2f);
+
         }
     }
 
@@ -50,9 +59,10 @@ public class Legattack : MonoBehaviour
 
         if (other.CompareTag("despawn"))
         {
-            speed = 5;
-            transform.localScale = new Vector3(-0.3f, 0.3f, 2f);
+            
+            transform.localScale = new Vector3(-0.27f, 0.27f, 2f);
             health = 50;
+
            
         }
     }

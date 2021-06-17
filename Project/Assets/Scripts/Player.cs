@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public LayerMask kiwig;
     public LayerMask sarangay;
     public LayerMask tiktik;
+    public LayerMask Manananggal;
+    public LayerMask leg;
     public float attackRange;
     public Transform attackPos;
     private float wait;
@@ -28,7 +30,8 @@ public class Player : MonoBehaviour
     public Animator target;
     public int damage;
     public Animator camAnim;
-
+    public GameObject unit;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -146,6 +149,19 @@ public class Player : MonoBehaviour
                         StartCoroutine(Tik());
                     }
 
+                    Collider2D[] ManaDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Manananggal);
+                    for (int a = 0; a < ManaDamage.Length; a++)
+                    {
+                        StartCoroutine(Bik());
+                    }
+
+
+                    Collider2D[] legDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, leg);
+                    for (int a = 0; a < legDamage.Length; a++)
+                    {
+                        StartCoroutine(Leg());
+                    }
+
 
 
                     wait = startattack;
@@ -183,14 +199,14 @@ public class Player : MonoBehaviour
         for (int i = 0; i < enemiesToDamage.Length; i++)
 
         {
+            
 
-
-            enemiesToDamage[i].GetComponent<Kiwig>().health -= damage;
+            enemiesToDamage[i].GetComponent<Kiwig>().amage(damage);
 
             camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 
             camAnim.SetTrigger("shake");
-
+            
 
         }
 
@@ -234,6 +250,52 @@ public class Player : MonoBehaviour
 
 
             enemiesToDamage[t].GetComponent<Tiktik>().health -= damage;
+
+            camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+
+            camAnim.SetTrigger("shake");
+
+
+        }
+
+    }
+
+    IEnumerator Bik()
+    {
+        yield return new WaitForSeconds(0.01f);
+
+
+
+        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Manananggal);
+        for (int t = 0; t < enemiesToDamage.Length; t++)
+
+        {
+
+
+            enemiesToDamage[t].GetComponent<Manananngal>().health -= damage;
+
+            camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+
+            camAnim.SetTrigger("shake");
+
+
+        }
+
+    }
+
+    IEnumerator Leg()
+    {
+        yield return new WaitForSeconds(0.01f);
+
+
+
+        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, leg);
+        for (int t = 0; t < enemiesToDamage.Length; t++)
+
+        {
+
+
+            enemiesToDamage[t].GetComponent<Legattack>().health -= damage;
 
             camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 

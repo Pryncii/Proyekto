@@ -206,7 +206,7 @@ MonoBehaviour:
   whatsenemy:
     serializedVersion: 2
     m_Bits: 8
-  damage: 20
+  damage: 10
   health: 100
   tiktikanim: {fileID: 608002143427402051}
   camAnim: {fileID: 0}

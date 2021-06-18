@@ -125,7 +125,13 @@ public class Tiktik : MonoBehaviour
             tiktikanim.SetBool("Moving", false);
         }
 
-      
+        if (other.CompareTag("Legg"))
+        {
+            Destroy(gameObject);
+            Instantiate(effect, transform.position, Quaternion.identity);
+        }
+
+
     }
 
     IEnumerator Timedelay()

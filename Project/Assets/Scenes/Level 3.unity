@@ -820,8 +820,8 @@ MonoBehaviour:
   - {fileID: 4536039513761259021, guid: eb69fa3e27d92c94cb164de160123840, type: 3}
   - {fileID: 908743700205670564, guid: d6383f7925d008f4781a700d64a0497d, type: 3}
   starttimebtwspawn: 1.5
-  decreasetime: 0.02
-  minTime: 0.9
+  decreasetime: 0.01
+  minTime: 1
 --- !u!1001 &2088241290
 PrefabInstance:
   m_ObjectHideFlags: 0

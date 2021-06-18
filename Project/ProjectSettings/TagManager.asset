@@ -11,6 +11,7 @@ TagManager:
   - bg
   - Tiktik
   - leg
+  - Legg
   layers:
   - Default
   - TransparentFX

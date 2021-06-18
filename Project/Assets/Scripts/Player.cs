@@ -226,7 +226,7 @@ public class Player : MonoBehaviour
         {
 
 
-            enemiesToDamage[a].GetComponent<Sarangay>().health -= damage;
+            enemiesToDamage[a].GetComponent<Sarangay>().hurt(damage);
 
             camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 
@@ -295,7 +295,9 @@ public class Player : MonoBehaviour
         {
 
 
-            enemiesToDamage[t].GetComponent<Legattack>().health -= damage;
+            enemiesToDamage[t].GetComponent<Legattack>().takedamage(damage);
+
+            
 
             camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 

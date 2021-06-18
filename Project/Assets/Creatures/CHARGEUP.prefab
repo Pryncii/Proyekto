@@ -122,8 +122,9 @@ MonoBehaviour:
   effect: {fileID: 4390342571436972500, guid: 99c2c0db9b501e142a0aa335febe57d0, type: 3}
   damage: 50
   camAnim: {fileID: 0}
-  health: 100
+  health: 200
   anim: {fileID: 7024098026878626004}
+  startdazetime: 4
 --- !u!61 &6614170146358785958
 BoxCollider2D:
   m_ObjectHideFlags: 0

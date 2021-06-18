@@ -69,6 +69,12 @@ public class Kiwig : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (other.CompareTag("Legg"))
+        {
+            Destroy(gameObject);
+            Instantiate(effect, transform.position, Quaternion.identity);
+        }
     }
 
     public void amage(int damage)

@@ -1225,7 +1225,7 @@ MonoBehaviour:
   - {fileID: 2242061137450721822, guid: b8a51715d30b6444c82f3d7dc09e0abc, type: 3}
   - {fileID: 4536039513761259021, guid: f7e73e17e98f28e40943c59b894d9a55, type: 3}
   starttimebtwspawn: 1.5
-  decreasetime: 0.02
+  decreasetime: 0.01
   minTime: 0.9
 --- !u!1001 &2088241290
 PrefabInstance:

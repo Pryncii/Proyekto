@@ -10,10 +10,13 @@ public class Sarangay : MonoBehaviour
     private float wait;
     public GameObject effect;
     public int damage = 50;
-    private float speed = 0;
+    public float speed = 0;
     public Animator camAnim;
     public int health = 100;
     public Animator anim;
+    private float dazetime;
+    public float startdazetime;
+    private Vector2 targetPos;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +38,24 @@ public class Sarangay : MonoBehaviour
             Instantiate(effect, transform.position, Quaternion.identity);
 
         }
+
+
+        if (dazetime <= 0)
+        {
+            
+            StartCoroutine(Attack());
+            anim.SetBool("Dizzy", false);
+           
+
+        }
+        else
+        {
+          
+            dazetime -= Time.deltaTime;
+            anim.SetBool("Dizzy", true);
+            anim.SetBool("Attack", false);
+            
+        }
     }
 
     IEnumerator Attack()
@@ -43,11 +64,27 @@ public class Sarangay : MonoBehaviour
 
         anim.SetBool("Attack", true);
 
-        speed = 17;
-        
+        damage = 50;
 
+
+        if (dazetime <= 0)
+        {
+            speed = 17;
+            anim.SetBool("Dizzy", false);
+            
+        }
+        else
+        {
+            speed = 0;
+            damage = 0;
+            anim.SetBool("Dizzy", true);
+           
+
+        }
 
     }
+
+    
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -65,7 +102,24 @@ public class Sarangay : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (other.CompareTag("Legg"))
+        {
+            Destroy(gameObject);
+            Instantiate(effect, transform.position, Quaternion.identity);
+        }
+
 
     }
+
+    public void hurt(int damage)
+    {
+        dazetime = startdazetime;
+        health -= damage;
+        Instantiate(effect, transform.position, Quaternion.identity);
+        targetPos = new Vector2(transform.position.x, transform.position.y + 1f);
+
+    }
+
+
 
 }

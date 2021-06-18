@@ -36,8 +36,19 @@ public class Decoy : MonoBehaviour
 
         }
 
+        if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxheight)
+        {
+            targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+            transform.position = targetPos;
+        }
 
-        
+        if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minheight)
+        {
+            targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
+            transform.position = targetPos;
+        }
+
+
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             startTouchPosition = Input.GetTouch(0).position;
 

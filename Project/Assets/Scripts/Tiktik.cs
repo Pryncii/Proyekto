@@ -39,6 +39,17 @@ public class Tiktik : MonoBehaviour
         
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
+
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            tiktikanim.SetBool("Moving", true);
+        }
+
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            tiktikanim.SetBool("Moving", true);
+        }
+
         if (health <= 0)
         {
             Destroy(gameObject);

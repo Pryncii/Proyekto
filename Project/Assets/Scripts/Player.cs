@@ -43,6 +43,8 @@ public class Player : MonoBehaviour
     void Update()
     {
 
+       
+
         if (health <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -51,6 +53,16 @@ public class Player : MonoBehaviour
 
 
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxheight)
+        {
+            targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minheight)
+        {
+            targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
+        }
 
         if (wait > 0)
         {
@@ -62,18 +74,13 @@ public class Player : MonoBehaviour
         {
 
 
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, kiwig);
                 for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
 
-
-
                     StartCoroutine(Timedelay());
-                   
-
-
 
 
                 }
@@ -84,9 +91,28 @@ public class Player : MonoBehaviour
                     StartCoroutine(Bull());
                 }
 
+                Collider2D[] TikDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, tiktik);
+                for (int a = 0; a < TikDamage.Length; a++)
+                {
+                    StartCoroutine(Tik());
+                }
+
+                Collider2D[] ManaDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Manananggal);
+                for (int a = 0; a < ManaDamage.Length; a++)
+                {
+                    StartCoroutine(Bik());
+                }
 
 
-                    wait = startattack;
+                Collider2D[] legDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, leg);
+                for (int a = 0; a < legDamage.Length; a++)
+                {
+                    StartCoroutine(Leg());
+                }
+
+
+
+                wait = startattack;
 
             }
         }

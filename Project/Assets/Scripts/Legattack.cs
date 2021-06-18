@@ -62,7 +62,7 @@ public class Legattack : MonoBehaviour
            
             transform.localScale = new Vector3(-0.27f, 0.27f, 2f);
             health = 50;
-            damage = 10;
+            damage = 20;
 
            
         }

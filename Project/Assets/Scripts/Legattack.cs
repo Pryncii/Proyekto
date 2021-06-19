@@ -9,12 +9,12 @@ public class Legattack : MonoBehaviour
     public GameObject effect;
     public Animator camAnim;
     public int health = 200;
-
+    public float lifetime;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Destroy(gameObject, lifetime);
     }
 
     // Update is called once per frame

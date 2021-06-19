@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 
 public class Player : MonoBehaviour
 
-{ 
+{
+    public Text healthdisplay;
     private Vector2 startTouchPosition, endTouchPosition;
     private Vector3 startPlayerPosition, endPlayerPosition;
     private float movetime;
@@ -31,7 +33,9 @@ public class Player : MonoBehaviour
     public int damage;
     public Animator camAnim;
     public GameObject unit;
-    
+    public GameObject effect;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +47,7 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-       
+        healthdisplay.text = health.ToString();
 
         if (health <= 0)
         {
@@ -52,17 +56,23 @@ public class Player : MonoBehaviour
         }
 
 
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+      
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxheight)
         {
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+            transform.position = targetPos;
+            Instantiate(effect, transform.position, Quaternion.identity);
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minheight)
         {
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
+            transform.position = targetPos;
+            Instantiate(effect, transform.position, Quaternion.identity);
         }
+
+        transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
 
         if (wait > 0)
         {

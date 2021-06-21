@@ -8,5 +8,6 @@ public class Play : MonoBehaviour
   public void begin()
     {
         SceneManager.LoadScene("LevelSelect");
+        GetComponent<AudioSource>().Play();
     }
 }

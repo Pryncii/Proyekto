@@ -155,6 +155,8 @@ public class Tiktik : MonoBehaviour
         {
             enemiesToDamage[i].GetComponent<Player>().health -= damage;
 
+            GetComponent<AudioSource>().Play();
+
             camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 
             camAnim.SetTrigger("shake");

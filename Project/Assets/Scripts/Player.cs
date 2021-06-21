@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     public float startattack;
     private Vector2 targetPos;
     public float Yincrement;
+
     public float maxheight;
     public float minheight;
     public float speed;
@@ -36,13 +37,16 @@ public class Player : MonoBehaviour
     public GameObject unit;
     public GameObject effect;
     public AudioSource Ready;
+    public AudioSource Attack;
+    public AudioSource Hit;
+    public AudioSource jump;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        targetPos = new Vector2(transform.position.x, transform.position.y + 0.2f);
     }
 
     // Update is called once per frame
@@ -68,6 +72,8 @@ public class Player : MonoBehaviour
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
             transform.position = targetPos;
             Instantiate(effect, transform.position, Quaternion.identity);
+            jump.Play();
+
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minheight)
@@ -75,6 +81,8 @@ public class Player : MonoBehaviour
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
             transform.position = targetPos;
             Instantiate(effect, transform.position, Quaternion.identity);
+            jump.Play();
+
         }
 
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
@@ -85,9 +93,10 @@ public class Player : MonoBehaviour
 
         }
 
-        if (wait > 0.01 && wait < 0.05)
+        if (wait > 0.01 && wait < 0.025)
         {
-            GetComponent<AudioSource>().Play();
+            Ready.Play();
+            Instantiate(effect, transform.position, Quaternion.identity);
         }
 
         if (wait <= 0)
@@ -97,12 +106,15 @@ public class Player : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
+
+                Attack.Play();
+
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, kiwig);
                 for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
 
                     StartCoroutine(Timedelay());
-
+                 
 
                 }
 
@@ -151,7 +163,9 @@ public class Player : MonoBehaviour
             {
                
                 targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
-  
+                jump.Play();
+
+
 
             }
 
@@ -160,8 +174,10 @@ public class Player : MonoBehaviour
             {
                
                 targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+                jump.Play();
 
-    
+
+
             }
 
             if (wait <= 0)
@@ -170,13 +186,17 @@ public class Player : MonoBehaviour
 
                 if ((endTouchPosition.x >= startTouchPosition.x) && (endTouchPosition.y == startTouchPosition.y))
                 {
+
+                    Attack.Play();
+
                     Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, kiwig);
                     for (int i = 0; i < enemiesToDamage.Length; i++)
                     {
 
-
+                      
 
                         StartCoroutine(Timedelay());
+                       
 
 
 
@@ -253,7 +273,8 @@ public class Player : MonoBehaviour
             camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 
             camAnim.SetTrigger("shake");
-            
+
+            Attack.Play();
 
         }
 
@@ -279,6 +300,8 @@ public class Player : MonoBehaviour
 
             camAnim.SetTrigger("shake");
 
+            Attack.Play();
+
 
         }
 
@@ -302,6 +325,8 @@ public class Player : MonoBehaviour
 
             camAnim.SetTrigger("shake");
 
+            Attack.Play();
+
 
         }
 
@@ -324,6 +349,8 @@ public class Player : MonoBehaviour
             camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 
             camAnim.SetTrigger("shake");
+
+            Attack.Play();
 
 
         }
@@ -349,6 +376,8 @@ public class Player : MonoBehaviour
             camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 
             camAnim.SetTrigger("shake");
+
+            Attack.Play();
 
 
         }

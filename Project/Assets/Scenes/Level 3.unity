@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &110925666 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5630292731250163191, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
+  m_PrefabInstance: {fileID: 1204494275}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &137421161 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5204838916155049751, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
@@ -828,6 +839,10 @@ PrefabInstance:
       propertyPath: healthdisplay
       value: 
       objectReference: {fileID: 137421161}
+    - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
+      propertyPath: cooldowndisplay
+      value: 
+      objectReference: {fileID: 110925666}
     - target: {fileID: 5470871080337526187, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
       propertyPath: m_RootOrder
       value: 2

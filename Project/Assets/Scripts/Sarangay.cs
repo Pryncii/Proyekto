@@ -30,6 +30,7 @@ public class Sarangay : MonoBehaviour
     void Update()
     {
 
+
         transform.Translate(Vector2.left * speed * Time.deltaTime);
 
         if (health <= 0)
@@ -46,7 +47,8 @@ public class Sarangay : MonoBehaviour
             
             StartCoroutine(Attack());
             anim.SetBool("Dizzy", false);
-           
+            targetPos = new Vector2(transform.position.x, transform.position.y - 0.5f);
+
 
         }
         else
@@ -55,7 +57,8 @@ public class Sarangay : MonoBehaviour
             dazetime -= Time.deltaTime;
             anim.SetBool("Dizzy", true);
             anim.SetBool("Attack", false);
-            
+            targetPos = new Vector2(transform.position.x, transform.position.y + 0.5f);
+
         }
     }
 

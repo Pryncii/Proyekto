@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb5cb69cf6dbcc45ab4738ba2ced98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 35
+  damage: 30
   speed: 12
   effect: {fileID: 2131691627666475179, guid: 43adc17957d2edc4298d0657a06d1db6, type: 3}
   camAnim: {fileID: 0}

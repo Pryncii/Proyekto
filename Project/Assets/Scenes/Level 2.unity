@@ -1208,6 +1208,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 60.000004, y: 45.000004}
   m_EdgeRadius: 0
+--- !u!114 &1872748278 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5630292731250163191, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
+  m_PrefabInstance: {fileID: 524562355}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2008807798 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1723734713088917832, guid: ad975eae62d89a54d90754710beb8a96, type: 3}
@@ -1800,6 +1811,10 @@ PrefabInstance:
       propertyPath: AttackSarangay
       value: 
       objectReference: {fileID: 7546616614103525032, guid: 47fd4dc119390f04ca5f99dcc65e99f1, type: 3}
+    - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
+      propertyPath: cooldowndisplay
+      value: 
+      objectReference: {fileID: 1872748278}
     - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
       propertyPath: sarangay.m_Bits
       value: 128

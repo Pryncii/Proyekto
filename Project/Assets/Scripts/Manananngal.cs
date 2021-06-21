@@ -67,6 +67,7 @@ public class Manananngal : MonoBehaviour
         {
             other.GetComponent<Player>().health -= damage;
             Debug.Log(other.GetComponent<Player>().health);
+            GetComponent<AudioSource>().Play();
 
             camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 

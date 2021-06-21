@@ -29,6 +29,7 @@ public class Kiwig : MonoBehaviour
         {
             Destroy(gameObject);
             Instantiate(effect, transform.position, Quaternion.identity);
+            
 
         }
 
@@ -62,6 +63,7 @@ public class Kiwig : MonoBehaviour
            camAnim  = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 
             camAnim.SetTrigger("shake");
+            GetComponent<AudioSource>().Play();
 
         }
 
@@ -72,8 +74,10 @@ public class Kiwig : MonoBehaviour
 
         if (other.CompareTag("Legg"))
         {
-            Destroy(gameObject);
+            health = 0;
             Instantiate(effect, transform.position, Quaternion.identity);
+            
+
         }
     }
 

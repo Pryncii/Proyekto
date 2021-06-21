@@ -55,9 +55,21 @@ public class Legattack : MonoBehaviour
 
             camAnim.SetTrigger("shake");
 
+            GetComponent<AudioSource>().Play();
+
         }
 
-        if (other.CompareTag("despawn"))
+        if (other.CompareTag("Enemy") && CompareTag("Legg"))
+
+        {
+
+          
+             GetComponent<AudioSource>().Play();
+            
+        }
+
+
+            if (other.CompareTag("despawn"))
         {
            
             transform.localScale = new Vector3(-0.27f, 0.27f, 2f);
@@ -73,5 +85,7 @@ public class Legattack : MonoBehaviour
         health -= damage;
         gameObject.tag = "Legg";
     }
+
+  
 
 }

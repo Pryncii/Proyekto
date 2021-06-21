@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4071192617528780140}
   m_Layer: 0
-  m_Name: Pattern 44
+  m_Name: Pattern 56
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,4 +164,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e888b96c1836654ab3df9860bb299e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle: {fileID: 7024098026878625995, guid: bcd1bd20e81b1064ea9af29f1fd93ef8, type: 3}
+  obstacle: {fileID: 5336810187333935682, guid: 32ae6c3ad0e5deb4cb8f71883c50f389, type: 3}

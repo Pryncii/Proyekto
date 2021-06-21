@@ -22,8 +22,8 @@ public class Sarangay : MonoBehaviour
     void Start()
     {
         StartCoroutine(Attack());
-        
-      
+        Instantiate(effect, transform.position, Quaternion.identity);
+
     }
 
     // Update is called once per frame
@@ -36,6 +36,7 @@ public class Sarangay : MonoBehaviour
         {
             Destroy(gameObject);
             Instantiate(effect, transform.position, Quaternion.identity);
+            
 
         }
 
@@ -92,6 +93,7 @@ public class Sarangay : MonoBehaviour
         {
             other.GetComponent<Player>().health -= damage;
             Debug.Log(other.GetComponent<Player>().health);
+            GetComponent<AudioSource>().Play();
             camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 
             camAnim.SetTrigger("shake");
@@ -104,8 +106,9 @@ public class Sarangay : MonoBehaviour
 
         if (other.CompareTag("Legg"))
         {
-            Destroy(gameObject);
+            health = 0;
             Instantiate(effect, transform.position, Quaternion.identity);
+            
         }
 
 

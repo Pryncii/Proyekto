@@ -77,7 +77,8 @@ public class Manananngal : MonoBehaviour
 
         if (other.CompareTag("Legg"))
         {
-            Destroy(gameObject);
+            health = 0;
+            
             Instantiate(effect, transform.position, Quaternion.identity);
         }
 

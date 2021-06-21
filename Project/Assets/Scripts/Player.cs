@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
 {
     public Text healthdisplay;
+    public Text cooldowndisplay;
     private Vector2 startTouchPosition, endTouchPosition;
     private Vector3 startPlayerPosition, endPlayerPosition;
     private float movetime;
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
     public Animator camAnim;
     public GameObject unit;
     public GameObject effect;
+    public AudioSource Ready;
 
 
 
@@ -48,6 +50,7 @@ public class Player : MonoBehaviour
     {
 
         healthdisplay.text = health.ToString();
+        cooldowndisplay.text = wait.ToString("0");
 
         if (health <= 0)
         {
@@ -55,8 +58,10 @@ public class Player : MonoBehaviour
 
         }
 
+        
 
-      
+
+
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxheight)
         {
@@ -80,9 +85,15 @@ public class Player : MonoBehaviour
 
         }
 
+        if (wait > 0.01 && wait < 0.05)
+        {
+            GetComponent<AudioSource>().Play();
+        }
+
         if (wait <= 0)
         {
-
+            cooldowndisplay.text = ("Ready");
+            
 
             if (Input.GetKeyDown(KeyCode.Space))
             {

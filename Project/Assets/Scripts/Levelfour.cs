@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Play : MonoBehaviour
+public class Levelfour : MonoBehaviour
 {
-  public void begin()
+    public void begin()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Level 4");
         GetComponent<AudioSource>().Play();
     }
 }

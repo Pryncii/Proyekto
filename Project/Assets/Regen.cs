@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Regen : MonoBehaviour
 {
+    public GameObject effect;
     public float speed;
     public GameObject close;
     void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)

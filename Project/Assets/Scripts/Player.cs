@@ -26,7 +26,6 @@ public class Player : MonoBehaviour
     public float startattack;
     private Vector2 targetPos;
     public float Yincrement;
-
     public float maxheight;
     public float minheight;
     public float speed;

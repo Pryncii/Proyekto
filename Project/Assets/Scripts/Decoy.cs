@@ -24,13 +24,14 @@ public class Decoy : MonoBehaviour
     void Start()
     {
         targetPos = new Vector2(transform.position.x, transform.position.y + 0.2f);
+        transform.position = targetPos;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+        
 
         if (health <= 0)
         {
@@ -41,13 +42,14 @@ public class Decoy : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxheight)
         {
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-           
+            transform.position = targetPos;
+
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minheight)
         {
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
-            
+            transform.position = targetPos;
         }
 
 

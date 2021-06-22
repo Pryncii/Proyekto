@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 17da3f7a06d38bd479f56767b76458c8
+guid: b571b5bca90952644b067b72840d53ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1781058356909251321
-    second: RetryButton_0
+      213: -8630923909508717717
+    second: Health_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -35,7 +35,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -142,13 +142,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RetryButton_0
+      name: Health_0
       rect:
         serializedVersion: 2
-        x: 380
-        y: 300
-        width: 1176
-        height: 480
+        x: 1419
+        y: 571
+        width: 3200
+        height: 3411
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fa11df932797b810800000000000000
-      internalID: 1781058356909251321
+      spriteID: b63ae42de6cc83880800000000000000
+      internalID: -8630923909508717717
       vertices: []
       indices: 
       edges: []

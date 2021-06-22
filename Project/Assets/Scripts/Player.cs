@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     public Animator camAnim;
     public GameObject unit;
     public GameObject effect;
+    public GameObject GO;
     public AudioSource Ready;
     public AudioSource Attack;
     public AudioSource Hit;
@@ -58,7 +59,7 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GO.SetActive(true);
 
         }
 

@@ -35,11 +35,13 @@ public class Player : MonoBehaviour
     public Animator camAnim;
     public GameObject unit;
     public GameObject effect;
+    public GameObject eff;
     public GameObject GO;
     public AudioSource Ready;
     public AudioSource Attack;
     public AudioSource Hit;
     public AudioSource jump;
+   
 
 
 
@@ -58,8 +60,10 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
+            
             GO.SetActive(true);
-
+            Destroy(gameObject);
+            Instantiate(eff, transform.position, Quaternion.identity);
         }
 
         

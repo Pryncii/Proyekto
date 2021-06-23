@@ -163,6 +163,7 @@ MonoBehaviour:
   camAnim: {fileID: 0}
   unit: {fileID: 9062875879388123632, guid: 5d234b0a8c64c2c4e8ca89ea2c0ff45e, type: 3}
   effect: {fileID: 8222504801517123562, guid: b6621852470207a43b67df459498c479, type: 3}
+  eff: {fileID: 8222504801517123562, guid: 9c1d92c12b08640438fb4f23b02ab637, type: 3}
   GO: {fileID: 1655323575928775744, guid: 6eacbfbd595e2ee41bf519f0f385bb41, type: 3}
   Ready: {fileID: 2498046851630472628}
   Attack: {fileID: 4641998557191460620}

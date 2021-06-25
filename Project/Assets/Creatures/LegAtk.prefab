@@ -124,6 +124,7 @@ MonoBehaviour:
   camAnim: {fileID: 0}
   health: 200
   lifetime: 25
+  scoring: {fileID: 6318867757620277311, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
 --- !u!61 &8882580266240276326
 BoxCollider2D:
   m_ObjectHideFlags: 0

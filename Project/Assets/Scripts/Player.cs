@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public LayerMask tiktik;
     public LayerMask Manananggal;
     public LayerMask leg;
+    public LayerMask Mambabarang;
     public float attackRange;
     public Transform attackPos;
     private float wait;
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
     public int damage;
     public Animator camAnim;
     public GameObject unit;
+
     public GameObject effect;
     public GameObject eff;
     public GameObject GO;
@@ -41,7 +43,9 @@ public class Player : MonoBehaviour
     public AudioSource Attack;
     public AudioSource Hit;
     public AudioSource jump;
-   
+    public GameObject scoring;
+
+
 
 
 
@@ -67,6 +71,7 @@ public class Player : MonoBehaviour
         }
 
         
+
 
 
 
@@ -118,7 +123,8 @@ public class Player : MonoBehaviour
                 {
 
                     StartCoroutine(Timedelay());
-                 
+                    scoring.gameObject.GetComponent<ScoreManager>().score += 1;
+
 
                 }
 
@@ -126,18 +132,21 @@ public class Player : MonoBehaviour
                 for (int a = 0; a < ToDamage.Length; a++)
                 {
                     StartCoroutine(Bull());
+                    scoring.gameObject.GetComponent<ScoreManager>().score += 3;
                 }
 
                 Collider2D[] TikDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, tiktik);
                 for (int a = 0; a < TikDamage.Length; a++)
                 {
                     StartCoroutine(Tik());
+                    scoring.gameObject.GetComponent<ScoreManager>().score += 1;
                 }
 
                 Collider2D[] ManaDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Manananggal);
                 for (int a = 0; a < ManaDamage.Length; a++)
                 {
                     StartCoroutine(Bik());
+                    scoring.gameObject.GetComponent<ScoreManager>().score += 2;
                 }
 
 
@@ -145,9 +154,15 @@ public class Player : MonoBehaviour
                 for (int a = 0; a < legDamage.Length; a++)
                 {
                     StartCoroutine(Leg());
+                    scoring.gameObject.GetComponent<ScoreManager>().score += 3;
                 }
 
-
+                Collider2D[] MamDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Mambabarang);
+                for (int a = 0; a < MamDamage.Length; a++)
+                {
+                    StartCoroutine(Mam());
+                    scoring.gameObject.GetComponent<ScoreManager>().score += 2;
+                }
 
                 wait = startattack;
 
@@ -233,6 +248,12 @@ public class Player : MonoBehaviour
                         StartCoroutine(Leg());
                     }
 
+                    Collider2D[] MamDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Mambabarang);
+                    for (int a = 0; a < MamDamage.Length; a++)
+                    {
+                        StartCoroutine(Mam());
+                    }
+
 
 
                     wait = startattack;
@@ -280,6 +301,8 @@ public class Player : MonoBehaviour
 
             Attack.Play();
 
+            Hit.Play();
+
         }
 
 
@@ -305,7 +328,7 @@ public class Player : MonoBehaviour
             camAnim.SetTrigger("shake");
 
             Attack.Play();
-
+            Hit.Play();
 
         }
 
@@ -330,7 +353,7 @@ public class Player : MonoBehaviour
             camAnim.SetTrigger("shake");
 
             Attack.Play();
-
+            Hit.Play();
 
         }
 
@@ -355,6 +378,7 @@ public class Player : MonoBehaviour
             camAnim.SetTrigger("shake");
 
             Attack.Play();
+            Hit.Play();
 
 
         }
@@ -380,9 +404,36 @@ public class Player : MonoBehaviour
             camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 
             camAnim.SetTrigger("shake");
-
+            Hit.Play();
             Attack.Play();
 
+
+        }
+
+    }
+
+    IEnumerator Mam()
+    {
+        yield return new WaitForSeconds(0.01f);
+
+
+
+        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Mambabarang);
+        for (int t = 0; t < enemiesToDamage.Length; t++)
+
+        {
+
+
+            enemiesToDamage[t].GetComponent<Mambabarang>().health -= damage;
+
+
+
+            camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+
+            camAnim.SetTrigger("shake");
+
+            Attack.Play();
+            Hit.Play();
 
         }
 

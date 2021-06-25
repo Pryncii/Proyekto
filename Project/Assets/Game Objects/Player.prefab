@@ -149,7 +149,10 @@ MonoBehaviour:
     m_Bits: 512
   leg:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
+  Mambabarang:
+    serializedVersion: 2
+    m_Bits: 2048
   attackRange: 0.8
   attackPos: {fileID: 6117141765191694134}
   startattack: 3
@@ -169,6 +172,7 @@ MonoBehaviour:
   Attack: {fileID: 4641998557191460620}
   Hit: {fileID: 2807522909481016415}
   jump: {fileID: 8311753570642011587}
+  scoring: {fileID: 6318867757620277311, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
 --- !u!50 &5470871080337526186
 Rigidbody2D:
   serializedVersion: 4
@@ -418,7 +422,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0994c12e202f342459a4212e7287f7e8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6e8772b49f34d402a90016ed445d8a2f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

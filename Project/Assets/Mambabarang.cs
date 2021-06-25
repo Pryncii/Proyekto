@@ -107,6 +107,15 @@ public class Mambabarang : MonoBehaviour
             Ready.Play();
 
         }
+
+        if (other.CompareTag("Legg"))
+        {
+            health = 0;
+            Instantiate(effect, transform.position, Quaternion.identity);
+
+
+        }
     }
+
 
 }

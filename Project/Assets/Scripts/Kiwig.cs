@@ -12,7 +12,7 @@ public class Kiwig : MonoBehaviour
     private float dazetime;
     public float startdazetime;
     public Animator kiki;
-
+    public GameObject scoring;
     // Start is called before the first frame update
     void Start()
     {

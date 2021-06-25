@@ -1005,12 +1005,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5716113306279570920, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
+      propertyPath: scoreDisplay
+      value: 
+      objectReference: {fileID: 932895810}
     - target: {fileID: 6318867757620277311, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
       propertyPath: m_Name
       value: despawn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
+--- !u!114 &932895810 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1676003524742373607, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
+  m_PrefabInstance: {fileID: 524562355}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000418115 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1723734713088917832, guid: ad975eae62d89a54d90754710beb8a96, type: 3}
@@ -1157,6 +1172,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 60.000004, y: 45.000004}
   m_EdgeRadius: 0
+--- !u!1 &1329436872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6318867757620277311, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
+  m_PrefabInstance: {fileID: 876278879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1383825212 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1723734713088917832, guid: ad975eae62d89a54d90754710beb8a96, type: 3}
@@ -1964,6 +1984,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 608002143427402051, guid: a9f97345575dae540807f57bc85304a1, type: 3}
+    - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
+      propertyPath: scoring
+      value: 
+      objectReference: {fileID: 1329436872}
     - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
       propertyPath: attackPos
       value: 

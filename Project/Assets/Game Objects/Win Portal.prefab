@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7544337258783090371}
   - component: {fileID: 7864562421009041223}
+  - component: {fileID: -494963268814882367}
   m_Layer: 0
   m_Name: Win Portal
   m_TagString: Untagged
@@ -82,3 +83,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-494963268814882367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680880560004325656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf08615a4180f941a1057b281d7a36a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4

@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Advertisements;
 
 
 
 public class Player : MonoBehaviour
 
 {
+
+
     public Text healthdisplay;
     public Text cooldowndisplay;
     private Vector2 startTouchPosition, endTouchPosition;
@@ -35,7 +38,7 @@ public class Player : MonoBehaviour
     public int damage;
     public Animator camAnim;
     public GameObject unit;
-
+    public GameObject jumpy;
     public GameObject effect;
     public GameObject eff;
     public GameObject GO;
@@ -45,7 +48,13 @@ public class Player : MonoBehaviour
     public AudioSource jump;
     public GameObject scoring;
 
+#if UNITY_IOS
+    private string gameId = "4190594";
+#elif UNITY_ANDROID
+    private string gameId = "4190595";
+#endif
 
+    bool testMode = true;
 
 
 
@@ -53,6 +62,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         targetPos = new Vector2(transform.position.x, transform.position.y + 0.2f);
+          // Initialize the Ads service:
+        Advertisement.Initialize(gameId, testMode);
     }
 
     // Update is called once per frame
@@ -64,10 +75,16 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            
+            if (Advertisement.IsReady())
+            {
+                Advertisement.Show();
+                // Replace mySurfacingId with the ID of the placements you wish to display as shown in your Unity Dashboard.
+            }
             GO.SetActive(true);
             Destroy(gameObject);
             Instantiate(eff, transform.position, Quaternion.identity);
+            Destroy(scoring);
+           
         }
 
         
@@ -81,7 +98,7 @@ public class Player : MonoBehaviour
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
             transform.position = targetPos;
             Instantiate(effect, transform.position, Quaternion.identity);
-            jump.Play();
+            Instantiate(jumpy, transform.position, Quaternion.identity);
 
         }
 
@@ -90,7 +107,7 @@ public class Player : MonoBehaviour
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
             transform.position = targetPos;
             Instantiate(effect, transform.position, Quaternion.identity);
-            jump.Play();
+            Instantiate(jumpy, transform.position, Quaternion.identity);
 
         }
 
@@ -123,7 +140,7 @@ public class Player : MonoBehaviour
                 {
 
                     StartCoroutine(Timedelay());
-                    scoring.gameObject.GetComponent<ScoreManager>().score += 1;
+                   
 
 
                 }
@@ -132,21 +149,21 @@ public class Player : MonoBehaviour
                 for (int a = 0; a < ToDamage.Length; a++)
                 {
                     StartCoroutine(Bull());
-                    scoring.gameObject.GetComponent<ScoreManager>().score += 3;
+                    
                 }
 
                 Collider2D[] TikDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, tiktik);
                 for (int a = 0; a < TikDamage.Length; a++)
                 {
                     StartCoroutine(Tik());
-                    scoring.gameObject.GetComponent<ScoreManager>().score += 1;
+                    
                 }
 
                 Collider2D[] ManaDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Manananggal);
                 for (int a = 0; a < ManaDamage.Length; a++)
                 {
                     StartCoroutine(Bik());
-                    scoring.gameObject.GetComponent<ScoreManager>().score += 2;
+                 
                 }
 
 
@@ -154,14 +171,14 @@ public class Player : MonoBehaviour
                 for (int a = 0; a < legDamage.Length; a++)
                 {
                     StartCoroutine(Leg());
-                    scoring.gameObject.GetComponent<ScoreManager>().score += 3;
+                    
                 }
 
                 Collider2D[] MamDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Mambabarang);
                 for (int a = 0; a < MamDamage.Length; a++)
                 {
                     StartCoroutine(Mam());
-                    scoring.gameObject.GetComponent<ScoreManager>().score += 2;
+                    
                 }
 
                 wait = startattack;
@@ -182,7 +199,7 @@ public class Player : MonoBehaviour
             {
                
                 targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
-                jump.Play();
+                Instantiate(jumpy, transform.position, Quaternion.identity);
 
 
 
@@ -193,7 +210,7 @@ public class Player : MonoBehaviour
             {
                
                 targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                jump.Play();
+                Instantiate(jumpy, transform.position, Quaternion.identity);
 
 
 
@@ -303,6 +320,8 @@ public class Player : MonoBehaviour
 
             Hit.Play();
 
+            scoring.gameObject.GetComponent<ScoreManager>().score += 1;
+
         }
 
 
@@ -329,6 +348,7 @@ public class Player : MonoBehaviour
 
             Attack.Play();
             Hit.Play();
+            scoring.gameObject.GetComponent<ScoreManager>().score += 3;
 
         }
 
@@ -354,6 +374,7 @@ public class Player : MonoBehaviour
 
             Attack.Play();
             Hit.Play();
+            scoring.gameObject.GetComponent<ScoreManager>().score += 1;
 
         }
 
@@ -379,7 +400,7 @@ public class Player : MonoBehaviour
 
             Attack.Play();
             Hit.Play();
-
+            scoring.gameObject.GetComponent<ScoreManager>().score += 2;
 
         }
 
@@ -406,6 +427,7 @@ public class Player : MonoBehaviour
             camAnim.SetTrigger("shake");
             Hit.Play();
             Attack.Play();
+            scoring.gameObject.GetComponent<ScoreManager>().score += 3;
 
 
         }
@@ -426,7 +448,7 @@ public class Player : MonoBehaviour
 
             enemiesToDamage[t].GetComponent<Mambabarang>().health -= damage;
 
-
+            scoring.gameObject.GetComponent<ScoreManager>().score += 2;
 
             camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 

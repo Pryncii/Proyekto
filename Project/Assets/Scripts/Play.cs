@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Play : MonoBehaviour
 {
+    public GameObject Levelselect;
+        public GameObject close;
+
   public void begin()
     {
-        SceneManager.LoadScene("Level 1");
-        GetComponent<AudioSource>().Play();
+        Levelselect.SetActive(true);
+        close.SetActive(false);
+        
     }
 }

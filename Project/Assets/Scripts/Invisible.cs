@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WinPortal : MonoBehaviour
+public class Invisible : MonoBehaviour
 {
 
     public float speed;
     public GameObject spawner;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -29,4 +29,4 @@ public class WinPortal : MonoBehaviour
         }
 
     }
-        }
+}

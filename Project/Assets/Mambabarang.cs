@@ -88,7 +88,7 @@ public class Mambabarang : MonoBehaviour
         yield return new WaitForSeconds(1f);
         anim.SetBool("Attack", false);
         StartCoroutine(Attack());
-        speed = 2;
+        speed = 2f;
 
     }
 

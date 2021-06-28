@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 5336810187333935681}
   Leg: {fileID: 4128557016206054497, guid: 023a0ac4aa83df74fbbac25564cffa69, type: 3}
-  speed: 3.5
+  speed: 4.5
   Yincrement: 0.4
   effect: {fileID: 2131691627666475179, guid: 43adc17957d2edc4298d0657a06d1db6, type: 3}
   shotPoint: {fileID: 5462367262995815491}

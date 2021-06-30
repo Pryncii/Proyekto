@@ -200,6 +200,8 @@ public class Player : MonoBehaviour
                
                 targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
                 Instantiate(jumpy, transform.position, Quaternion.identity);
+                transform.position = targetPos;
+                Instantiate(effect, transform.position, Quaternion.identity);
 
 
 
@@ -211,6 +213,8 @@ public class Player : MonoBehaviour
                
                 targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
                 Instantiate(jumpy, transform.position, Quaternion.identity);
+                transform.position = targetPos;
+                Instantiate(effect, transform.position, Quaternion.identity);
 
 
 
@@ -459,6 +463,87 @@ public class Player : MonoBehaviour
 
         }
 
+    }
+
+    public void moveup()
+    {
+        if (transform.position.y < maxheight)
+        {
+            targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+            transform.position = targetPos;
+            Instantiate(effect, transform.position, Quaternion.identity);
+            Instantiate(jumpy, transform.position, Quaternion.identity);
+
+        }
+    }
+
+    public void movedown()
+    {
+
+        if (transform.position.y > minheight)
+        {
+
+            targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
+            Instantiate(jumpy, transform.position, Quaternion.identity);
+            transform.position = targetPos;
+            Instantiate(effect, transform.position, Quaternion.identity);
+
+        }
+    }
+
+    public void att()
+    {
+        Attack.Play();
+
+        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, kiwig);
+        for (int i = 0; i < enemiesToDamage.Length; i++)
+        {
+
+
+
+            StartCoroutine(Timedelay());
+
+
+
+
+
+
+        }
+
+        Collider2D[] ToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, sarangay);
+        for (int a = 0; a < ToDamage.Length; a++)
+        {
+            StartCoroutine(Bull());
+        }
+
+        Collider2D[] TikDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, tiktik);
+        for (int a = 0; a < TikDamage.Length; a++)
+        {
+            StartCoroutine(Tik());
+        }
+
+        Collider2D[] ManaDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Manananggal);
+        for (int a = 0; a < ManaDamage.Length; a++)
+        {
+            StartCoroutine(Bik());
+        }
+
+
+        Collider2D[] legDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, leg);
+        for (int a = 0; a < legDamage.Length; a++)
+        {
+            StartCoroutine(Leg());
+        }
+
+        Collider2D[] MamDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Mambabarang);
+        for (int a = 0; a < MamDamage.Length; a++)
+        {
+            StartCoroutine(Mam());
+        }
+
+
+
+        wait = startattack;
     }
 
 

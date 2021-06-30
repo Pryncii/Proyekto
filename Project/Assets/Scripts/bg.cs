@@ -23,7 +23,7 @@ public class bg : MonoBehaviour
         {
             Vector2 pos = new Vector2(startX, transform.position.y);
             transform.position = pos;
-            unit.gameObject.GetComponent<SpriteRenderer>().sortingOrder -= 1;
+            unit.gameObject.GetComponent<SpriteRenderer>().sortingOrder -= 2;
             
         }
     }

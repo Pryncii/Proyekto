@@ -92,4 +92,22 @@ public class Decoy : MonoBehaviour
     }
 
 
+    public void moveup()
+    {
+        if (transform.position.y < maxheight)
+        {
+            targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+            transform.position = targetPos;
+           
+        }
+    }
+
+    public void movedown()
+    {
+        targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
+        transform.position = targetPos;
+        
+    }
+
+
 }

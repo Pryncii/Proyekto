@@ -10,7 +10,8 @@ public class Regen : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
-        
+    
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -18,7 +19,7 @@ public class Regen : MonoBehaviour
         if (other.CompareTag("Player"))
         {
 
-            other.GetComponent<Player>().health += 50;
+            other.GetComponent<Player>().health += 25;
             Debug.Log(other.GetComponent<Player>().health);
             Instantiate(effect, transform.position, Quaternion.identity);
             GetComponent<AudioSource>().Play();

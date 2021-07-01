@@ -8,7 +8,7 @@ public class Legattack : MonoBehaviour
     public float speed;
     public GameObject effect;
     public Animator camAnim;
-    public int health = 250;
+    public int health = 300;
     public float lifetime;
 
     // Start is called before the first frame update
@@ -42,6 +42,13 @@ public class Legattack : MonoBehaviour
             transform.localScale = new Vector3(-0.27f, 0.27f, 2f);
 
         }
+
+        if (health == 200)
+        {
+            transform.Translate(Vector2.right * speed * Time.deltaTime * 3f);
+            transform.localScale = new Vector3(-0.27f, 0.27f, 2f);
+
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -68,8 +75,15 @@ public class Legattack : MonoBehaviour
             
         }
 
+        if (other.CompareTag("Legg"))
+        {
+            health = 0;
 
-            if (other.CompareTag("despawn"))
+            Instantiate(effect, transform.position, Quaternion.identity);
+        }
+
+
+        if (other.CompareTag("despawn"))
         {
            
             transform.localScale = new Vector3(-0.27f, 0.27f, 2f);

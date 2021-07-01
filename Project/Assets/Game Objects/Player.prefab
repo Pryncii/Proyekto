@@ -67,6 +67,7 @@ Transform:
   m_LocalScale: {x: 2.5, y: 2.5, z: 0.4}
   m_Children:
   - {fileID: 6117141765191694134}
+  - {fileID: 8387901865189049652}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -156,6 +157,7 @@ MonoBehaviour:
   attackRange: 0.8
   attackPos: {fileID: 6117141765191694134}
   startattack: 3
+  startspecial: 20
   Yincrement: 2
   maxheight: 4
   minheight: -2
@@ -174,6 +176,8 @@ MonoBehaviour:
   Hit: {fileID: 2807522909481016415}
   jump: {fileID: 8311753570642011587}
   scoring: {fileID: 6318867757620277311, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
+  windblade: {fileID: 986100985571432657, guid: af1179e323e318a4fb1554c186c7aec1, type: 3}
+  shotPoint: {fileID: 8387901865189049652}
 --- !u!50 &5470871080337526186
 Rigidbody2D:
   serializedVersion: 4
@@ -624,3 +628,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &6868283885451663781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8387901865189049652}
+  m_Layer: 3
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8387901865189049652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6868283885451663781}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2, y: 0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5470871080337526187}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

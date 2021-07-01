@@ -7,6 +7,8 @@ public class AttackSpeed : MonoBehaviour
     public GameObject effect;
     public float speed;
     public int duration;
+    public AudioSource begin;
+    public AudioSource end;
 
 
     void Update()
@@ -23,7 +25,7 @@ public class AttackSpeed : MonoBehaviour
             other.GetComponent<Player>().startattack -= 1;
             Debug.Log(other.GetComponent<Player>().damage);
             Instantiate(effect, transform.position, Quaternion.identity);
-            GetComponent<AudioSource>().Play();
+            begin.Play();
             GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
             StartCoroutine(Normal(other));
 
@@ -39,7 +41,7 @@ public class AttackSpeed : MonoBehaviour
         yield return new WaitForSeconds(10f);
         other.GetComponent<Player>().startattack += 1;
         Debug.Log(other.GetComponent<Player>().damage);
-        GetComponent<AudioSource>().Play();
+        end.Play();
 
     }
 }

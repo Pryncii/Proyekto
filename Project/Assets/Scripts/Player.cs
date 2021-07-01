@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     public Text healthdisplay;
     public Text cooldowndisplay;
+    public Text cooldownspecial;
     private Vector2 startTouchPosition, endTouchPosition;
     private Vector3 startPlayerPosition, endPlayerPosition;
     private float movetime;
@@ -28,6 +29,8 @@ public class Player : MonoBehaviour
     public Transform attackPos;
     private float wait;
     public float startattack;
+    private float Specialwait;
+    public float startspecial;
     private Vector2 targetPos;
     public float Yincrement;
     public float maxheight;
@@ -47,6 +50,8 @@ public class Player : MonoBehaviour
     public AudioSource Hit;
     public AudioSource jump;
     public GameObject scoring;
+    public GameObject windblade;
+    public Transform shotPoint;
 
 #if UNITY_IOS
     private string gameId = "4190594";
@@ -64,6 +69,7 @@ public class Player : MonoBehaviour
         targetPos = new Vector2(transform.position.x, transform.position.y + 0.2f);
           // Initialize the Ads service:
         Advertisement.Initialize(gameId, testMode);
+        
     }
 
     // Update is called once per frame
@@ -72,6 +78,7 @@ public class Player : MonoBehaviour
 
         healthdisplay.text = health.ToString();
         cooldowndisplay.text = wait.ToString("0");
+        cooldownspecial.text = Specialwait.ToString("0");
 
         if (health <= 0)
         {
@@ -87,13 +94,18 @@ public class Player : MonoBehaviour
            
         }
 
-        
+        if (health <= 25)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 0.5f, 0.5f, 1);
+        }
 
 
 
 
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxheight)
+
+
+            if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxheight)
         {
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
             transform.position = targetPos;
@@ -109,6 +121,23 @@ public class Player : MonoBehaviour
             Instantiate(effect, transform.position, Quaternion.identity);
             Instantiate(jumpy, transform.position, Quaternion.identity);
 
+        }
+
+        if (Specialwait > 0)
+        {
+            Specialwait -= Time.deltaTime;
+
+        }
+        if (Specialwait <= 0)
+        {
+
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                Instantiate(windblade, shotPoint.position, transform.rotation);
+                Specialwait = startspecial;
+            }
+
+            
         }
 
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
@@ -128,9 +157,9 @@ public class Player : MonoBehaviour
         if (wait <= 0)
         {
             cooldowndisplay.text = ("Ready");
-            
 
-            if (Input.GetKeyDown(KeyCode.Space))
+         
+                if (Input.GetKeyDown(KeyCode.Space))
             {
 
                 Attack.Play();
@@ -185,7 +214,7 @@ public class Player : MonoBehaviour
 
             }
         }
-
+       
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             startTouchPosition = Input.GetTouch(0).position;
 

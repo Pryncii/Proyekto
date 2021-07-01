@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RockPower : MonoBehaviour
+public class AttackSpeed : MonoBehaviour
 {
     public GameObject effect;
     public float speed;
     public int duration;
+
 
     void Update()
     {
@@ -19,7 +20,7 @@ public class RockPower : MonoBehaviour
         if (other.CompareTag("Player"))
         {
 
-            other.GetComponent<Player>().damage += 100;
+            other.GetComponent<Player>().startattack -= 1;
             Debug.Log(other.GetComponent<Player>().damage);
             Instantiate(effect, transform.position, Quaternion.identity);
             GetComponent<AudioSource>().Play();
@@ -28,17 +29,18 @@ public class RockPower : MonoBehaviour
 
         }
 
-      
+
 
     }
 
-    
-        IEnumerator Normal(Collider2D other)
-        {
-            yield return new WaitForSeconds(duration);
-            other.GetComponent<Player>().damage -= 100;
-            Debug.Log(other.GetComponent<Player>().damage);
+
+    IEnumerator Normal(Collider2D other)
+    {
+        yield return new WaitForSeconds(10f);
+        other.GetComponent<Player>().startattack += 1;
+        Debug.Log(other.GetComponent<Player>().damage);
         GetComponent<AudioSource>().Play();
 
     }
 }
+

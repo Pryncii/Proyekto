@@ -8,7 +8,7 @@ public class Legattack : MonoBehaviour
     public float speed;
     public GameObject effect;
     public Animator camAnim;
-    public int health = 200;
+    public int health = 250;
     public float lifetime;
 
     // Start is called before the first frame update

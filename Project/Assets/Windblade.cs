@@ -6,6 +6,7 @@ public class Windblade : MonoBehaviour
 {
 
     public float speed;
+    public GameObject jumpy;
 
     // Start is called before the first frame update
     void Start()
@@ -18,4 +19,12 @@ public class Windblade : MonoBehaviour
     {
     transform.Translate(Vector2.right * speed * Time.deltaTime);
 }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy") && CompareTag("Legg"))
+        {
+            Instantiate(jumpy, transform.position, Quaternion.identity);
+        }
+    }
 }

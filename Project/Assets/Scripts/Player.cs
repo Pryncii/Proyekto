@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
     public AudioSource Attack;
     public AudioSource Hit;
     public AudioSource jump;
+    public AudioSource special;
     public GameObject scoring;
     public GameObject windblade;
     public Transform shotPoint;
@@ -66,6 +67,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // position the player
         targetPos = new Vector2(transform.position.x, transform.position.y + 0.2f);
           // Initialize the Ads service:
         Advertisement.Initialize(gameId, testMode);
@@ -75,11 +77,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // UI inputs
         healthdisplay.text = health.ToString();
         cooldowndisplay.text = wait.ToString("0");
         cooldownspecial.text = Specialwait.ToString("0");
 
+        // Player death
         if (health <= 0)
         {
             if (Advertisement.IsReady())
@@ -94,18 +97,9 @@ public class Player : MonoBehaviour
            
         }
 
-        if (health <= 25)
-        {
-            GetComponent<SpriteRenderer>().color = new Color(1, 0.5f, 0.5f, 1);
-        }
+        // PC Move up
 
-
-
-
-
-
-
-            if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxheight)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxheight)
         {
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
             transform.position = targetPos;
@@ -114,6 +108,7 @@ public class Player : MonoBehaviour
 
         }
 
+        // PC Move down
         if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minheight)
         {
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
@@ -122,22 +117,32 @@ public class Player : MonoBehaviour
             Instantiate(jumpy, transform.position, Quaternion.identity);
 
         }
-
+        // PC Special Attack 
         if (Specialwait > 0)
         {
             Specialwait -= Time.deltaTime;
 
         }
+        if (Specialwait >= 0.01 && Specialwait <= 0.06)
+        {
+            special.Play();
+        }
+
         if (Specialwait <= 0)
         {
+            cooldownspecial.text = ("Ready");
 
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
+               
                 Instantiate(windblade, shotPoint.position, transform.rotation);
                 Specialwait = startspecial;
+                scoring.gameObject.GetComponent<ScoreManager>().score += 5;
+                Attack.Play();
+
             }
 
-            
+
         }
 
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
@@ -575,6 +580,19 @@ public class Player : MonoBehaviour
         wait = startattack;
     }
 
+    public void Special()
+    {
+        if (Specialwait <= 0)
+        {
+
+         
+                Instantiate(windblade, shotPoint.position, transform.rotation);
+                Specialwait = startspecial;
+
+                Attack.Play();
+
+        }
+    }
 
 
 

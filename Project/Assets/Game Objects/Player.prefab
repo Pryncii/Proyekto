@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 2807522909481016415}
   - component: {fileID: 7257281644283897063}
   - component: {fileID: 8311753570642011587}
+  - component: {fileID: 3996476081198392242}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -136,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthdisplay: {fileID: 6309860515812841611, guid: eb514dc3bf5f31645b4edc535205e615, type: 3}
   cooldowndisplay: {fileID: 0}
+  cooldownspecial: {fileID: 0}
   kiwig:
     serializedVersion: 2
     m_Bits: 64
@@ -157,7 +159,7 @@ MonoBehaviour:
   attackRange: 0.8
   attackPos: {fileID: 6117141765191694134}
   startattack: 3
-  startspecial: 20
+  startspecial: 25
   Yincrement: 2
   maxheight: 4
   minheight: -2
@@ -167,7 +169,7 @@ MonoBehaviour:
   damage: 100
   camAnim: {fileID: 0}
   unit: {fileID: 9062875879388123632, guid: 5d234b0a8c64c2c4e8ca89ea2c0ff45e, type: 3}
-  jumpy: {fileID: 535563105689056248, guid: 24469dc12c7609d4da1c69221facc412, type: 3}
+  jumpy: {fileID: 535563105689056248, guid: d51461750060eb94f9f3b1b1545854fc, type: 3}
   effect: {fileID: 8222504801517123562, guid: b6621852470207a43b67df459498c479, type: 3}
   eff: {fileID: 8222504801517123562, guid: 9c1d92c12b08640438fb4f23b02ab637, type: 3}
   GO: {fileID: 1655323575928775744, guid: 6eacbfbd595e2ee41bf519f0f385bb41, type: 3}
@@ -175,6 +177,7 @@ MonoBehaviour:
   Attack: {fileID: 4641998557191460620}
   Hit: {fileID: 2807522909481016415}
   jump: {fileID: 8311753570642011587}
+  special: {fileID: 3996476081198392242}
   scoring: {fileID: 6318867757620277311, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
   windblade: {fileID: 986100985571432657, guid: af1179e323e318a4fb1554c186c7aec1, type: 3}
   shotPoint: {fileID: 8387901865189049652}
@@ -543,6 +546,102 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 05ff2515ebe294f4bacc55e66a812b04, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &3996476081198392242
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5470871080337526182}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 070b3dfadff735d479ec8c7623fc70e7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

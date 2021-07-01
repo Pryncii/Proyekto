@@ -27,8 +27,10 @@ public class AttackSpeed : MonoBehaviour
             Instantiate(effect, transform.position, Quaternion.identity);
             begin.Play();
             GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
-            StartCoroutine(Normal(other));
-
+            if(other != null)
+            {
+                StartCoroutine(Normal(other));
+            }
         }
 
 
@@ -38,10 +40,15 @@ public class AttackSpeed : MonoBehaviour
 
     IEnumerator Normal(Collider2D other)
     {
-        yield return new WaitForSeconds(10f);
-        other.GetComponent<Player>().startattack += 1;
-        Debug.Log(other.GetComponent<Player>().damage);
-        end.Play();
+       
+            yield return new WaitForSeconds(10f);
+        if (other != null)
+        {
+            other.GetComponent<Player>().startattack += 1;
+            Debug.Log(other.GetComponent<Player>().damage);
+            end.Play();
+        }
+        
 
     }
 }

@@ -27,7 +27,11 @@ public class RockPower : MonoBehaviour
             Instantiate(effect, transform.position, Quaternion.identity);
             begin.Play();
             GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
-            StartCoroutine(Normal(other));
+            if (other != null)
+            {
+                StartCoroutine(Normal(other));
+            }
+            
 
         }
 
@@ -38,10 +42,16 @@ public class RockPower : MonoBehaviour
     
         IEnumerator Normal(Collider2D other)
         {
+
+       
             yield return new WaitForSeconds(duration);
+        if (other != null)
+        {
+
             other.GetComponent<Player>().damage -= 100;
             Debug.Log(other.GetComponent<Player>().damage);
-        end.Play();
-
+            end.Play();
+        }
+        
     }
 }

@@ -132,7 +132,7 @@ public class Player : MonoBehaviour
         {
             cooldownspecial.text = ("Ready");
 
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.RightArrow) && windblade.activeSelf)
             {
                
                 Instantiate(windblade, shotPoint.position, transform.rotation);
@@ -267,14 +267,8 @@ public class Player : MonoBehaviour
                     for (int i = 0; i < enemiesToDamage.Length; i++)
                     {
 
-                      
-
                         StartCoroutine(Timedelay());
                        
-
-
-
-
 
                     }
 
@@ -316,17 +310,10 @@ public class Player : MonoBehaviour
                 }
             }
 
-
-
-
-
         }
 
         
 
-        
-
-       
 
     }
 
@@ -582,7 +569,7 @@ public class Player : MonoBehaviour
 
     public void Special()
     {
-        if (Specialwait <= 0)
+        if (Specialwait <= 0 && windblade.activeSelf)
         {
 
          

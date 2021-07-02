@@ -26,5 +26,10 @@ public class Windblade : MonoBehaviour
         {
             Instantiate(jumpy, transform.position, Quaternion.identity);
         }
+
+        if (other.CompareTag("leg"))
+        {
+            Instantiate(jumpy, transform.position, Quaternion.identity);
+        }
     }
 }

@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public Text healthdisplay;
     public Text cooldowndisplay;
     public Text cooldownspecial;
+   
     private Vector2 startTouchPosition, endTouchPosition;
     private Vector3 startPlayerPosition, endPlayerPosition;
     private float movetime;
@@ -52,6 +53,7 @@ public class Player : MonoBehaviour
     public AudioSource special;
     public GameObject scoring;
     public GameObject windblade;
+    public GameObject ButtonControl;
     public Transform shotPoint;
 
 #if UNITY_IOS
@@ -71,6 +73,7 @@ public class Player : MonoBehaviour
         targetPos = new Vector2(transform.position.x, transform.position.y + 0.2f);
           // Initialize the Ads service:
         Advertisement.Initialize(gameId, testMode);
+        scoring = FindObjectOfType<ScoreManager>().gameObject;
         
     }
 
@@ -93,8 +96,8 @@ public class Player : MonoBehaviour
             GO.SetActive(true);
             Destroy(gameObject);
             Instantiate(eff, transform.position, Quaternion.identity);
-            Destroy(scoring);
-           
+            scoring.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
         }
 
         // PC Move up
@@ -132,12 +135,12 @@ public class Player : MonoBehaviour
         {
             cooldownspecial.text = ("Ready");
 
-            if (Input.GetKeyDown(KeyCode.RightArrow) && windblade.activeSelf)
+            if (Input.GetKeyDown(KeyCode.RightArrow) && windblade.activeSelf == true)
             {
                
                 Instantiate(windblade, shotPoint.position, transform.rotation);
                 Specialwait = startspecial;
-                scoring.gameObject.GetComponent<ScoreManager>().score += 5;
+              
                 Attack.Play();
 
             }
@@ -229,7 +232,7 @@ public class Player : MonoBehaviour
 
             
 
-            if ((endTouchPosition.y < startTouchPosition.y) && transform.position.y > minheight)
+            if ((endTouchPosition.y < startTouchPosition.y) && transform.position.y > minheight && ButtonControl.activeSelf == false)
             {
                
                 targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
@@ -241,7 +244,7 @@ public class Player : MonoBehaviour
 
             }
 
-            if ((endTouchPosition.y > startTouchPosition.y) && transform.position.y < maxheight)
+            if ((endTouchPosition.y > startTouchPosition.y) && transform.position.y < maxheight && ButtonControl.activeSelf == false)
 
             {
                
@@ -258,7 +261,7 @@ public class Player : MonoBehaviour
             {
 
 
-                if ((endTouchPosition.x >= startTouchPosition.x) && (endTouchPosition.y == startTouchPosition.y))
+                if ((endTouchPosition.x >= startTouchPosition.x) && (endTouchPosition.y == startTouchPosition.y) && ButtonControl.activeSelf == false)
                 {
 
                     Attack.Play();
@@ -569,7 +572,7 @@ public class Player : MonoBehaviour
 
     public void Special()
     {
-        if (Specialwait <= 0 && windblade.activeSelf)
+        if (Specialwait <= 0 && windblade.activeSelf == true)
         {
 
          

@@ -10,11 +10,13 @@ public class Legattack : MonoBehaviour
     public Animator camAnim;
     public int health = 300;
     public float lifetime;
+    public GameObject scoring;
 
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, lifetime);
+        scoring = FindObjectOfType<ScoreManager>().gameObject;
     }
 
     // Update is called once per frame
@@ -69,9 +71,9 @@ public class Legattack : MonoBehaviour
         if (other.CompareTag("Enemy") && CompareTag("Legg"))
 
         {
+            scoring.gameObject.GetComponent<ScoreManager>().score += 1;
 
-          
-             GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().Play();
             
         }
 

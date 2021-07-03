@@ -858,7 +858,7 @@ GameObject:
   - component: {fileID: 8776173453692952021}
   - component: {fileID: 6516909337682474473}
   m_Layer: 5
-  m_Name: Text (3)
+  m_Name: HIGHSCORE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

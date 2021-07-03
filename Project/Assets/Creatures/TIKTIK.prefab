@@ -211,6 +211,7 @@ MonoBehaviour:
   health: 100
   tiktikanim: {fileID: 608002143427402051}
   camAnim: {fileID: 0}
+  scoring: {fileID: 0}
 --- !u!82 &3778173571215560740
 AudioSource:
   m_ObjectHideFlags: 0

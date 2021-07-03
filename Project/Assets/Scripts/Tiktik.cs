@@ -22,6 +22,7 @@ public class Tiktik : MonoBehaviour
     public Animator camAnim;
     private Vector2 startTouchPosition, endTouchPosition;
     private Vector3 startPlayerPosition, endPlayerPosition;
+    public GameObject scoring;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class Tiktik : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Playe").GetComponent<Transform>();
             Instantiate(effect, transform.position, Quaternion.identity);
         tiktikanim.SetBool("Moving", true);
+        scoring = FindObjectOfType<ScoreManager>().gameObject;
     }
 
     // Update is called once per frame
@@ -54,7 +56,10 @@ public class Tiktik : MonoBehaviour
         {
             Destroy(gameObject);
             Instantiate(effect, transform.position, Quaternion.identity);
-
+            if (scoring != null)
+            {
+                scoring.gameObject.GetComponent<ScoreManager>().score += 1;
+            }
         }
 
 

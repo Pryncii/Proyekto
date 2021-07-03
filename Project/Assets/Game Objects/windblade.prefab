@@ -165,8 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a29ecee536faf846b1dc8735b124efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 6
   jumpy: {fileID: 535563105689056248, guid: 24469dc12c7609d4da1c69221facc412, type: 3}
+  scoring: {fileID: 0}
 --- !u!114 &986100985571432655
 MonoBehaviour:
   m_ObjectHideFlags: 0

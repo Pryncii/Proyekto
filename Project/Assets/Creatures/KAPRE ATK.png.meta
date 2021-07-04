@@ -1,19 +1,34 @@
 fileFormatVersion: 2
-guid: e7b070df7d68dec49bff2ca49cedf817
+guid: 2973d422f18580d4e865f1faa8afe07c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9020326611286731413
-    second: KAPRE WALK_0
+      213: 9057196464168234284
+    second: KAPRE ATK_0
   - first:
-      213: 6367866319897253414
-    second: KAPRE WALK_1
+      213: 5791360610027301781
+    second: KAPRE ATK_1
   - first:
-      213: -1941396153992885670
-    second: KAPRE WALK_2
+      213: -4765127103137945479
+    second: KAPRE ATK_2
   - first:
-      213: -3309131766659853759
-    second: KAPRE WALK_3
+      213: -6999833400207859981
+    second: KAPRE ATK_3
+  - first:
+      213: -3787838565678483952
+    second: KAPRE ATK_4
+  - first:
+      213: -491159469896843694
+    second: KAPRE ATK_5
+  - first:
+      213: 1478202514436326509
+    second: KAPRE ATK_6
+  - first:
+      213: -9150184095477449792
+    second: KAPRE ATK_7
+  - first:
+      213: -5480086399715726315
+    second: KAPRE ATK_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -58,7 +73,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 65
+  spritePixelsToUnits: 78
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -151,13 +166,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KAPRE WALK_0
+      name: KAPRE ATK_0
       rect:
         serializedVersion: 2
-        x: 90
-        y: 49
-        width: 445
-        height: 575
+        x: 35
+        y: 104
+        width: 572
+        height: 665
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59aafbfd243ae2d70800000000000000
-      internalID: 9020326611286731413
+      spriteID: c2deba37230a1bd70800000000000000
+      internalID: 9057196464168234284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KAPRE WALK_1
+      name: KAPRE ATK_1
       rect:
         serializedVersion: 2
-        x: 590
-        y: 54
-        width: 443
-        height: 584
+        x: 607
+        y: 77
+        width: 692
+        height: 706
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,20 +201,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62656a6fda43f5850800000000000000
-      internalID: 6367866319897253414
+      spriteID: 59bedd67acb0f5050800000000000000
+      internalID: 5791360610027301781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KAPRE WALK_2
+      name: KAPRE ATK_2
       rect:
         serializedVersion: 2
-        x: 1129
-        y: 58
-        width: 452
-        height: 580
+        x: 1395
+        y: 90
+        width: 499
+        height: 787
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,20 +222,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5ac1f0eb76ce05e0800000000000000
-      internalID: -1941396153992885670
+      spriteID: 97860eb752ededdb0800000000000000
+      internalID: -4765127103137945479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KAPRE WALK_3
+      name: KAPRE ATK_3
       rect:
         serializedVersion: 2
-        x: 1677
-        y: 48
-        width: 460
-        height: 587
+        x: 1935
+        y: 85
+        width: 529
+        height: 797
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +243,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1425745d03a9312d0800000000000000
-      internalID: -3309131766659853759
+      spriteID: 3fe12b5fb989bde90800000000000000
+      internalID: -6999833400207859981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAPRE ATK_4
+      rect:
+        serializedVersion: 2
+        x: 2598
+        y: 90
+        width: 601
+        height: 709
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0167532b4e4ee6bc0800000000000000
+      internalID: -3787838565678483952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAPRE ATK_5
+      rect:
+        serializedVersion: 2
+        x: 3250
+        y: 80
+        width: 632
+        height: 735
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25ebabc701d0f29f0800000000000000
+      internalID: -491159469896843694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAPRE ATK_6
+      rect:
+        serializedVersion: 2
+        x: 3913
+        y: 90
+        width: 688
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d640113ea51a38410800000000000000
+      internalID: 1478202514436326509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAPRE ATK_7
+      rect:
+        serializedVersion: 2
+        x: 4699
+        y: 85
+        width: 663
+        height: 776
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb33af7b04040180800000000000000
+      internalID: -9150184095477449792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAPRE ATK_8
+      rect:
+        serializedVersion: 2
+        x: 5439
+        y: 90
+        width: 688
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51cae764472d2f3b0800000000000000
+      internalID: -5480086399715726315
       vertices: []
       indices: 
       edges: []

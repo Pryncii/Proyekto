@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     public LayerMask Manananggal;
     public LayerMask leg;
     public LayerMask Mambabarang;
+    public LayerMask Kapre;
     public float attackRange;
     public Transform attackPos;
     private float wait;
@@ -218,6 +219,13 @@ public class Player : MonoBehaviour
                     
                 }
 
+                Collider2D[] KapDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Kapre);
+                for (int a = 0; a < KapDamage.Length; a++)
+                {
+                    StartCoroutine(Kap());
+
+                }
+
                 wait = startattack;
 
             }
@@ -304,6 +312,13 @@ public class Player : MonoBehaviour
                     for (int a = 0; a < MamDamage.Length; a++)
                     {
                         StartCoroutine(Mam());
+                    }
+
+                    Collider2D[] KapDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Kapre);
+                    for (int a = 0; a < KapDamage.Length; a++)
+                    {
+                        StartCoroutine(Kap());
+
                     }
 
 
@@ -489,6 +504,33 @@ public class Player : MonoBehaviour
 
     }
 
+    IEnumerator Kap()
+    {
+        yield return new WaitForSeconds(0.01f);
+
+
+
+        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Kapre);
+        for (int t = 0; t < enemiesToDamage.Length; t++)
+
+        {
+
+
+            enemiesToDamage[t].GetComponent<KAPRE>().takedamage(damage);
+
+            scoring.gameObject.GetComponent<ScoreManager>().score += 5;
+
+            camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+
+            camAnim.SetTrigger("shake");
+
+            Attack.Play();
+            Hit.Play();
+
+        }
+
+    }
+
     public void moveup()
     {
         if (transform.position.y < maxheight)
@@ -565,6 +607,12 @@ public class Player : MonoBehaviour
             StartCoroutine(Mam());
         }
 
+        Collider2D[] KapDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Kapre);
+        for (int a = 0; a < KapDamage.Length; a++)
+        {
+            StartCoroutine(Kap());
+
+        }
 
 
         wait = startattack;

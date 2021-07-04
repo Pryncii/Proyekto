@@ -19,13 +19,15 @@ public class KAPRE : MonoBehaviour
     public Animator camAnim;
     public int damage;
     public GameObject spawner;
+    public GameObject SpawnerBoss;
 
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("despawn").GetComponent<Transform>();
         scoring = FindObjectOfType<ScoreManager>().gameObject;
-       
+        kapreanim.SetBool("Moving", true);
+
     }
 
     // Update is called once per frame
@@ -36,10 +38,52 @@ public class KAPRE : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
 
-        if (health <= 300)
+        if (health <= 1300)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 0.9f, 0.9f, 1);
+        }
+
+        if (health <= 1100)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 0.8f, 0.8f, 1);
+        }
+
+        if (health <= 900)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 0.7f, 0.7f, 1);
+        }
+
+        if (health <= 700)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 0.6f, 0.6f, 1);
+        }
+
+        if (health <= 500)
         {
             GetComponent<SpriteRenderer>().color = new Color(1, 0.5f, 0.5f, 1);
         }
+
+        if (health <= 400)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 0.4f, 0.4f, 0.9f);
+        }
+
+        if (health <= 300)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 0.3f, 0.3f, 0.8f);
+        }
+
+        if (health <= 200)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 0.2f, 0.2f, 0.7f);
+        }
+
+        if (health <= 100)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 0.2f, 0.2f, 0.5f);
+        }
+
+
 
         if (health <= 0)
         {
@@ -91,6 +135,14 @@ public class KAPRE : MonoBehaviour
         if (other.CompareTag("KAP"))
         {
             Destroy(spawner);
+            SpawnerBoss.SetActive(true);
+            GetComponent<BoxCollider2D>().enabled = true;
+        }
+
+        if (other.CompareTag("KAPP"))
+        {
+            
+            kapreanim.SetBool("Moving", false);
         }
 
         if (other.CompareTag("Legg"))

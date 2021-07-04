@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2158082933167443605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7894466722133486679}
+  - component: {fileID: 3673181001859924356}
+  m_Layer: 0
+  m_Name: Spawner Boss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7894466722133486679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2158082933167443605}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3673181001859924356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2158082933167443605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a34489444381949bb4a005b91f251c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclePatterns:
+  - {fileID: 106099876131698881, guid: 34af90658634479479437c3bef4f5e02, type: 3}
+  - {fileID: 106099876131698881, guid: 768975888906b864685218a0428e7ee6, type: 3}
+  - {fileID: 106099876131698881, guid: 1fadf8bc92f1f9d40b30249cf3b6f222, type: 3}
+  - {fileID: 106099876131698881, guid: 7d8919b2f5585e94bb9188b674565ed3, type: 3}
+  - {fileID: 106099876131698881, guid: 52d13f09980073a4f86fb706e5c64f9c, type: 3}
+  - {fileID: 106099876131698881, guid: 69c1cd0c4265ad3408a93394ce487a49, type: 3}
+  - {fileID: 106099876131698881, guid: d140f3e73c1fb4f4ba572834b5d6c431, type: 3}
+  starttimebtwspawn: 1.8
+  decreasetime: 0.01
+  minTime: 0.9

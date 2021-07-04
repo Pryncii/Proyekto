@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  health: 1000
+  health: 1500
   effect: {fileID: 6516962723819460984, guid: e5fb4473d8878b648b09abc4ae25b650, type: 3}
   scoring: {fileID: 0}
   startattack: 3
@@ -180,6 +180,7 @@ MonoBehaviour:
   camAnim: {fileID: 0}
   damage: 95
   spawner: {fileID: 0}
+  SpawnerBoss: {fileID: 2158082933167443605, guid: c2615ca250688d5468a6b4145138f058, type: 3}
 --- !u!82 &6078494156271882115
 AudioSource:
   m_ObjectHideFlags: 0
@@ -300,7 +301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6078494156782671296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6078494156271882127}

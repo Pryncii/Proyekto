@@ -55,7 +55,12 @@ public class Legattack : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+
+        if (other.CompareTag("Legspawn"))
+        {
+            Destroy(gameObject);
+        }
+            if (other.CompareTag("Player"))
         {
             other.GetComponent<Player>().health -= damage;
             Debug.Log(other.GetComponent<Player>().health);

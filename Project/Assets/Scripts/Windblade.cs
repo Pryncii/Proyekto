@@ -23,6 +23,11 @@ public class Windblade : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
+
+        if (other.CompareTag("Legspawn"))
+        {
+            Destroy(gameObject);
+        }
         if (other.CompareTag("Enemy") && CompareTag("Legg"))
         {
             Instantiate(jumpy, transform.position, Quaternion.identity);

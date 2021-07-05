@@ -2889,6 +2889,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9313742347025941, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1676003524742373624, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -3031,7 +3035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8504067198101541821, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
@@ -3585,6 +3589,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48d9285d6f4016645aeac52522569570, type: 3}
+--- !u!114 &1591907010 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9313742347025930, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
+  m_PrefabInstance: {fileID: 1167692012}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1610220363
 GameObject:
   m_ObjectHideFlags: 0
@@ -4447,10 +4462,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  Totalscored: 0
   scoreDisplay: {fileID: 74442115}
   scoredDisplay: {fileID: 1624000622}
   highScore: {fileID: 416572851}
   highScored: {fileID: 281388576}
+  totalScore: {fileID: 1591907010}
+  Player: {fileID: 0}
 --- !u!1 &2034068300
 GameObject:
   m_ObjectHideFlags: 0
@@ -4622,22 +4640,22 @@ MonoBehaviour:
   - {fileID: 9217955205487346494, guid: 3e85c5f3cc7834b41b6776a4bebf1124, type: 3}
   - {fileID: 2242061137450721822, guid: e2d90fef1322a0f43acda7ba7eee3763, type: 3}
   - {fileID: 4536039513761259021, guid: adae802e7cb14cf44a9842d7999cb01b, type: 3}
-  - {fileID: 2344449522598782557, guid: d683e877cd1444745b5d68cb3f597c99, type: 3}
-  - {fileID: 2701591553497716416, guid: 1f3a43b629baebb4c9b0b0b4a5abc066, type: 3}
-  - {fileID: 2468902580629831698, guid: bac8fa056e0914344972430fd02aa92c, type: 3}
-  - {fileID: 908743700205670564, guid: bc04c893703f9e0459de4b299135d206, type: 3}
-  - {fileID: 106099876131698881, guid: 37529f6b6edf49746a041cd7ecfc0f14, type: 3}
-  - {fileID: 4071192617528780141, guid: 60bcaf95bcacb5642aab3b53de54c32b, type: 3}
-  - {fileID: 1300361224491036835, guid: 8a6f6be34d66bce46bb4fef7cc5471e4, type: 3}
-  - {fileID: 1409334274301117811, guid: 77a75da5e73825d48bffe5f1f7b2614a, type: 3}
-  - {fileID: 3360159196741950240, guid: 7a163571a9b8a7a458e628f83742c55c, type: 3}
+  - {fileID: 2344449522598782557, guid: a4d22377b4e8d5b42a56203f2f57e953, type: 3}
+  - {fileID: 2701591553497716416, guid: 40d379b5940c9ee4ab33f6a0904276b2, type: 3}
+  - {fileID: 2468902580629831698, guid: 45a92e3463c31cb4883a2873f8710fb1, type: 3}
+  - {fileID: 908743700205670564, guid: 0f2c1ca1714e67a4195b11126d208c30, type: 3}
+  - {fileID: 106099876131698881, guid: ce9c72f461e140b46bc1a38103023bea, type: 3}
+  - {fileID: 4071192617528780141, guid: 16e314c393a545044813bb3befcc5208, type: 3}
+  - {fileID: 1300361224491036835, guid: 93a1ff407bdaf8643b8f582ac7a96e01, type: 3}
+  - {fileID: 1409334274301117811, guid: 643dda27518c7d14c98cd14485453521, type: 3}
+  - {fileID: 3360159196741950240, guid: 98914c2ebed9f1a498d102507d76a0da, type: 3}
   - {fileID: 4912084539715013007, guid: 42648d588de3293488dff01acda265dc, type: 3}
   - {fileID: 9217955205487346494, guid: b8cb5986d23696d49af296965e6ecef2, type: 3}
   - {fileID: 2242061137450721822, guid: f0128d3780d1e714cb51ecb5fda85671, type: 3}
   - {fileID: 4536039513761259021, guid: 3fc28558391eb654e902cea310a95215, type: 3}
-  starttimebtwspawn: 1.8
+  starttimebtwspawn: 2
   decreasetime: 0.01
-  minTime: 0.9
+  minTime: 1
 --- !u!114 &2107834205 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5630292731250163191, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}

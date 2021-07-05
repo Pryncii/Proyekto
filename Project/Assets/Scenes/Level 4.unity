@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &73907480 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9313742347025930, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
+  m_PrefabInstance: {fileID: 5204838914571573191}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &84217999 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
@@ -995,6 +1006,10 @@ PrefabInstance:
       propertyPath: highScored
       value: 
       objectReference: {fileID: 1395074993}
+    - target: {fileID: 5716113306279570920, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
+      propertyPath: totalScore
+      value: 
+      objectReference: {fileID: 73907480}
     - target: {fileID: 5716113306279570920, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
       propertyPath: scoreDisplay
       value: 

@@ -145,5 +145,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  Totalscored: 0
   scoreDisplay: {fileID: 0}
   scoredDisplay: {fileID: 0}
+  highScore: {fileID: 0}
+  highScored: {fileID: 0}
+  totalScore: {fileID: 0}
+  Player: {fileID: 0}

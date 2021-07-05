@@ -927,6 +927,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad975eae62d89a54d90754710beb8a96, type: 3}
+--- !u!1 &690326236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5470871080337526182, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
+  m_PrefabInstance: {fileID: 537660428}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &702370361 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5630292731250163191, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
@@ -1008,7 +1013,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
   m_PrefabInstance: {fileID: 537660428}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 690326236}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e376e67ae289c541ac32420720bf304, type: 3}
@@ -1556,13 +1561,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5716113306279570920, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 690326236}
+    - target: {fileID: 5716113306279570920, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
       propertyPath: highScore
       value: 
       objectReference: {fileID: 1127513716}
     - target: {fileID: 5716113306279570920, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
+      propertyPath: TotalScore
+      value: 
+      objectReference: {fileID: 1639875288}
+    - target: {fileID: 5716113306279570920, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
       propertyPath: highScored
       value: 
       objectReference: {fileID: 198885154}
+    - target: {fileID: 5716113306279570920, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
+      propertyPath: totalScore
+      value: 
+      objectReference: {fileID: 1639875288}
     - target: {fileID: 5716113306279570920, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
       propertyPath: scoreDisplay
       value: 
@@ -1736,6 +1753,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 43.510002}
   m_EdgeRadius: 0
+--- !u!114 &1639875288 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9313742347025930, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
+  m_PrefabInstance: {fileID: 1712070676}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1712070676
 PrefabInstance:
   m_ObjectHideFlags: 0

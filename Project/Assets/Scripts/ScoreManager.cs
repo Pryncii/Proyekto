@@ -7,10 +7,19 @@ public class ScoreManager : MonoBehaviour
 {
 
     public int score;
+    public int Totalscored;
     public Text scoreDisplay;
     public Text scoredDisplay;
     public Text highScore;
     public Text highScored;
+    public Text totalScore;
+    public GameObject Player;
+
+   void Start()
+    {
+        Player = FindObjectOfType<Player>().gameObject;
+       Totalscored = PlayerPrefs.GetInt("TotalScore", 0);
+    }
 
     void Update()
     {
@@ -18,12 +27,22 @@ public class ScoreManager : MonoBehaviour
         scoredDisplay.text = score.ToString();
         highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
         highScored.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        totalScore.text = PlayerPrefs.GetInt("TotalScore", 0).ToString();
+        if (score > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            highScore.text = score.ToString();
+        }
+
+
     }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
         {
             score++;
+            
+
             Debug.Log(score);
             if(score > PlayerPrefs.GetInt("HighScore", 0))
             {

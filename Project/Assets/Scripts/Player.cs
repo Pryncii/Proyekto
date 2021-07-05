@@ -75,7 +75,11 @@ public class Player : MonoBehaviour
           // Initialize the Ads service:
         Advertisement.Initialize(gameId, testMode);
         scoring = FindObjectOfType<ScoreManager>().gameObject;
-        
+        health = PlayerPrefs.GetInt("Health", 100);
+        damage = PlayerPrefs.GetInt("Damage", 100);
+        startattack = PlayerPrefs.GetInt("StartAttack", 3);
+       startspecial = PlayerPrefs.GetInt("StartSpecial", 25);
+
     }
 
     // Update is called once per frame
@@ -99,6 +103,9 @@ public class Player : MonoBehaviour
             Instantiate(eff, transform.position, Quaternion.identity);
             scoring.gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
+            ScoreManager Total = scoring.GetComponent<ScoreManager>();
+            
+            PlayerPrefs.SetInt("TotalScore", Total.Totalscored += Total.score);
         }
 
         // PC Move up
@@ -632,7 +639,45 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void HealthUpOne()
+    {
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 3000)
+        {
+            PlayerPrefs.SetInt("Health", 125);
+        }
+    }
 
+    public void SpeedUpOne()
+    {
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 5000)
+        {
+            PlayerPrefs.SetInt("Damage", 200);
+        }
+    }
+
+    public void DamageUpOne()
+    {
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 10000)
+        {
+            PlayerPrefs.SetInt("StartAttack", 2);
+        }
+    }
+
+    public void SpecialUpOne()
+    {
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 15000)
+        {
+            PlayerPrefs.SetInt("StartSpecial", 20);
+        }
+    }
+
+    public void HealthUpTwo()
+    {
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 20000)
+        {
+            PlayerPrefs.SetInt("Health", 150);
+        }
+    }
 
 
 

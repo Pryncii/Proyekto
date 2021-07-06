@@ -200,7 +200,7 @@ MonoBehaviour:
   movement: 1
   startmove: 0
   minheight: 0
-  startattack: 2
+  startattack: 2.3
   effect: {fileID: 4920871286349836578, guid: 14dbd3d47618cad40afbdd1d687092cd, type: 3}
   attackPos: {fileID: 8611499807838077445}
   attackRange: 0.2

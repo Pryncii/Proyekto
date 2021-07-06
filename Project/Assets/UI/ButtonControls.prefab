@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 410835967040793610}
   m_Layer: 5
   m_Name: ButtonControls
-  m_TagString: Untagged
+  m_TagString: ButtonControl
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

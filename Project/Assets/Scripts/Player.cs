@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
     public Text healthdisplay;
     public Text cooldowndisplay;
     public Text cooldownspecial;
-   
     private Vector2 startTouchPosition, endTouchPosition;
     private Vector3 startPlayerPosition, endPlayerPosition;
     private float movetime;
@@ -644,10 +643,21 @@ public class Player : MonoBehaviour
         if (PlayerPrefs.GetInt("TotalScore", 0) >= 3000)
         {
             PlayerPrefs.SetInt("Health", 125);
+
+           
         }
     }
 
-    public void SpeedUpOne()
+    public void HealthDownOne()
+    {
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 3000)
+        {
+            PlayerPrefs.SetInt("Health", 100);
+        }
+    }
+
+
+    public void DamageUpOne()
     {
         if (PlayerPrefs.GetInt("TotalScore", 0) >= 5000)
         {
@@ -655,11 +665,27 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void DamageUpOne()
+    public void DamageDownOne()
+    {
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 5000)
+        {
+            PlayerPrefs.SetInt("Damage", 100);
+        }
+    }
+
+    public void SpeedUpOne()
     {
         if (PlayerPrefs.GetInt("TotalScore", 0) >= 10000)
         {
             PlayerPrefs.SetInt("StartAttack", 2);
+        }
+    }
+
+    public void SpeedDownOne()
+    {
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 10000)
+        {
+            PlayerPrefs.SetInt("StartAttack", 3);
         }
     }
 
@@ -671,11 +697,28 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void SpecialDownOne()
+    {
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 15000)
+        {
+            PlayerPrefs.SetInt("StartSpecial", 25);
+        }
+    }
+
     public void HealthUpTwo()
     {
         if (PlayerPrefs.GetInt("TotalScore", 0) >= 20000)
         {
             PlayerPrefs.SetInt("Health", 150);
+        }
+    }
+
+
+    public void HealthDownTwo()
+    {
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 20000)
+        {
+            PlayerPrefs.SetInt("Health", 100);
         }
     }
 

@@ -104,8 +104,11 @@ public class Decoy : MonoBehaviour
 
     public void movedown()
     {
-        targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
-        transform.position = targetPos;
+        if (transform.position.y > minheight)
+        {
+            targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
+            transform.position = targetPos;
+        }
         
     }
 

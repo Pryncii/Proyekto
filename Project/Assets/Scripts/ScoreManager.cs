@@ -19,6 +19,7 @@ public class ScoreManager : MonoBehaviour
     {
         Player = FindObjectOfType<Player>().gameObject;
        Totalscored = PlayerPrefs.GetInt("TotalScore", 0);
+        PlayerPrefs.GetInt("TotalScore", 0);
     }
 
     void Update()
@@ -41,7 +42,7 @@ public class ScoreManager : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             score++;
-            
+           
 
             Debug.Log(score);
             if(score > PlayerPrefs.GetInt("HighScore", 0))

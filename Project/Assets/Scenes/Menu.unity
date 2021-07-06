@@ -1476,8 +1476,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bd12e059d828841884709a1f6557c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 198574527}
-  close: {fileID: 1250372846}
+  open: {fileID: 1868865258}
+  close: {fileID: 599463794}
+  dmg1: {fileID: 1436085442}
+  dmg2: {fileID: 565281106}
+  spd1: {fileID: 257850900}
+  spd2: {fileID: 517648616}
+  spspd1: {fileID: 493348887}
+  spspd2: {fileID: 905527545}
+  hp1: {fileID: 198574527}
+  hp2: {fileID: 1250372846}
 --- !u!1 &215846023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1894,8 +1902,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bd12e059d828841884709a1f6557c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 257850900}
-  close: {fileID: 517648616}
+  open: {fileID: 1868865258}
+  close: {fileID: 599463794}
+  dmg1: {fileID: 1436085442}
+  dmg2: {fileID: 565281106}
+  spd1: {fileID: 257850900}
+  spd2: {fileID: 517648616}
+  spspd1: {fileID: 493348887}
+  spspd2: {fileID: 905527545}
+  hp1: {fileID: 198574527}
+  hp2: {fileID: 1250372846}
 --- !u!1 &291675988
 GameObject:
   m_ObjectHideFlags: 0
@@ -3468,8 +3484,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bd12e059d828841884709a1f6557c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 493348887}
-  close: {fileID: 905527545}
+  open: {fileID: 1868865258}
+  close: {fileID: 599463794}
+  dmg1: {fileID: 1436085442}
+  dmg2: {fileID: 565281106}
+  spd1: {fileID: 257850900}
+  spd2: {fileID: 517648616}
+  spspd1: {fileID: 493348887}
+  spspd2: {fileID: 905527545}
+  hp1: {fileID: 198574527}
+  hp2: {fileID: 1250372846}
 --- !u!1 &513752241
 GameObject:
   m_ObjectHideFlags: 0
@@ -3721,8 +3745,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bd12e059d828841884709a1f6557c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 257850900}
-  close: {fileID: 517648616}
+  open: {fileID: 1868865258}
+  close: {fileID: 599463794}
+  dmg1: {fileID: 1436085442}
+  dmg2: {fileID: 565281106}
+  spd1: {fileID: 257850900}
+  spd2: {fileID: 517648616}
+  spspd1: {fileID: 493348887}
+  spspd2: {fileID: 905527545}
+  hp1: {fileID: 198574527}
+  hp2: {fileID: 1250372846}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4540,8 +4572,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bd12e059d828841884709a1f6557c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 1436085442}
-  close: {fileID: 565281106}
+  open: {fileID: 1868865258}
+  close: {fileID: 599463794}
+  dmg1: {fileID: 1436085442}
+  dmg2: {fileID: 565281106}
+  spd1: {fileID: 257850900}
+  spd2: {fileID: 517648616}
+  spspd1: {fileID: 493348887}
+  spspd2: {fileID: 905527545}
+  hp1: {fileID: 198574527}
+  hp2: {fileID: 1250372846}
 --- !u!1 &579519987
 GameObject:
   m_ObjectHideFlags: 0
@@ -5119,6 +5159,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   open: {fileID: 1868865258}
   close: {fileID: 599463794}
+  dmg1: {fileID: 1436085442}
+  dmg2: {fileID: 565281106}
+  spd1: {fileID: 257850900}
+  spd2: {fileID: 517648616}
+  spspd1: {fileID: 493348887}
+  spspd2: {fileID: 905527545}
+  hp1: {fileID: 198574527}
+  hp2: {fileID: 1250372846}
 --- !u!1 &607038420
 GameObject:
   m_ObjectHideFlags: 0
@@ -6013,7 +6061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5470871080337526187, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
       propertyPath: m_RootOrder
@@ -11839,8 +11887,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bd12e059d828841884709a1f6557c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 493348887}
-  close: {fileID: 905527545}
+  open: {fileID: 1868865258}
+  close: {fileID: 599463794}
+  dmg1: {fileID: 1436085442}
+  dmg2: {fileID: 565281106}
+  spd1: {fileID: 257850900}
+  spd2: {fileID: 517648616}
+  spspd1: {fileID: 493348887}
+  spspd2: {fileID: 905527545}
+  hp1: {fileID: 198574527}
+  hp2: {fileID: 1250372846}
 --- !u!1001 &913337272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14274,8 +14330,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bd12e059d828841884709a1f6557c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 198574527}
-  close: {fileID: 1250372846}
+  open: {fileID: 1868865258}
+  close: {fileID: 599463794}
+  dmg1: {fileID: 1436085442}
+  dmg2: {fileID: 565281106}
+  spd1: {fileID: 257850900}
+  spd2: {fileID: 517648616}
+  spspd1: {fileID: 493348887}
+  spspd2: {fileID: 905527545}
+  hp1: {fileID: 198574527}
+  hp2: {fileID: 1250372846}
 --- !u!1 &1267822642
 GameObject:
   m_ObjectHideFlags: 0
@@ -14484,6 +14548,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   open: {fileID: 1299974751}
   close: {fileID: 0}
+  dmg1: {fileID: 0}
+  dmg2: {fileID: 0}
+  spd1: {fileID: 0}
+  spd2: {fileID: 0}
+  spspd1: {fileID: 0}
+  spspd2: {fileID: 0}
+  hp1: {fileID: 0}
+  hp2: {fileID: 0}
 --- !u!114 &1299974754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14592,6 +14664,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   open: {fileID: 410835967040793611, guid: 25145a3257cf70b45afe4fccf965eae8, type: 3}
   close: {fileID: 0}
+  dmg1: {fileID: 0}
+  dmg2: {fileID: 0}
+  spd1: {fileID: 0}
+  spd2: {fileID: 0}
+  spspd1: {fileID: 0}
+  spspd2: {fileID: 0}
+  hp1: {fileID: 0}
+  hp2: {fileID: 0}
 --- !u!1 &1323255172
 GameObject:
   m_ObjectHideFlags: 0
@@ -20146,8 +20226,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bd12e059d828841884709a1f6557c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 1436085442}
-  close: {fileID: 565281106}
+  open: {fileID: 1868865258}
+  close: {fileID: 599463794}
+  dmg1: {fileID: 1436085442}
+  dmg2: {fileID: 565281106}
+  spd1: {fileID: 257850900}
+  spd2: {fileID: 517648616}
+  spspd1: {fileID: 493348887}
+  spspd2: {fileID: 905527545}
+  hp1: {fileID: 198574527}
+  hp2: {fileID: 1250372846}
 --- !u!1 &1438800773
 GameObject:
   m_ObjectHideFlags: 0
@@ -22786,6 +22874,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   open: {fileID: 1868865258}
   close: {fileID: 599463794}
+  dmg1: {fileID: 1436085442}
+  dmg2: {fileID: 565281106}
+  spd1: {fileID: 257850900}
+  spd2: {fileID: 517648616}
+  spspd1: {fileID: 493348887}
+  spspd2: {fileID: 905527545}
+  hp1: {fileID: 198574527}
+  hp2: {fileID: 1250372846}
 --- !u!114 &1868865261
 MonoBehaviour:
   m_ObjectHideFlags: 0

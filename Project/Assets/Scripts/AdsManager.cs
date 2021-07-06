@@ -5,7 +5,7 @@ using UnityEngine.Advertisements;
 
 public class AdsManager : MonoBehaviour
 
-
+    
 
 {
 #if UNITY_IOS
@@ -13,13 +13,15 @@ public class AdsManager : MonoBehaviour
 #elif UNITY_ANDROID
     private string gameId = "4190595";
 #endif
-
+    public float health;
     bool testMode = true;
 
     void Start()
     {
         // Initialize the Ads service:
         Advertisement.Initialize(gameId, testMode);
+        
+       
     }
 
     public void ShowInterstitialAd()
@@ -35,4 +37,6 @@ public class AdsManager : MonoBehaviour
             Debug.Log("Interstitial ad not ready at the moment! Please try again later!");
         }
     }
+
+
 }

@@ -8,7 +8,7 @@ using UnityEngine.Advertisements;
 
 
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IUnityAdsListener
 
 {
 
@@ -56,6 +56,8 @@ public class Player : MonoBehaviour
     public GameObject ButtonControl;
     public Transform shotPoint;
 
+    string mySurfacingId = "rewardedVideo";
+
 #if UNITY_IOS
     private string gameId = "4190594";
 #elif UNITY_ANDROID
@@ -69,6 +71,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
+        Advertisement.AddListener(this);
         // position the player
         targetPos = new Vector2(transform.position.x, transform.position.y + 0.2f);
           // Initialize the Ads service:
@@ -90,18 +94,16 @@ public class Player : MonoBehaviour
         cooldownspecial.text = Specialwait.ToString("0");
 
         // Player death
+
         if (health <= 0)
         {
-            if (Advertisement.IsReady())
-            {
-                Advertisement.Show();
-                // Replace mySurfacingId with the ID of the placements you wish to display as shown in your Unity Dashboard.
-            }
+
+            ShowInterstitialAd();
             GO.SetActive(true);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             Instantiate(eff, transform.position, Quaternion.identity);
             scoring.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-
+            Time.timeScale = 0;
             ScoreManager Total = scoring.GetComponent<ScoreManager>();
             
             PlayerPrefs.SetInt("TotalScore", Total.Totalscored += Total.score);
@@ -721,7 +723,93 @@ public class Player : MonoBehaviour
             PlayerPrefs.SetInt("Health", 100);
         }
     }
+    public void ShowInterstitialAd()
+    {
+        // Check if UnityAds ready before calling Show method:
+        if (Advertisement.IsReady("video"))
+        {
+            Advertisement.Show("video");
+            // Replace mySurfacingId with the ID of the placements you wish to display as shown in your Unity Dashboard.
+        }
+        else
+        {
+            Debug.Log("Interstitial ad not ready at the moment! Please try again later!");
+        }
+    }
+    public void ShowRewardedVideo()
+    {
+        // Check if UnityAds ready before calling Show method:
+        if (Advertisement.IsReady(mySurfacingId))
+        {
+            Advertisement.Show(mySurfacingId);
+        }
+        else
+        {
+            Debug.Log("Rewarded video is not ready at the moment! Please try again later!");
+        }
+    }
 
+    public void OnUnityAdsDidFinish(string surfacingId, ShowResult showResult)
+    {
+        // Define conditional logic for each ad completion status:
+        if (showResult == ShowResult.Finished)
+        {
+            if (surfacingId == mySurfacingId)
+            {
+                // Reward the user for watching the ad to completion.
+                GO.SetActive(false);
+                Instantiate(gameObject);
+                gameObject.SetActive(true);
+                health = 50;
+                scoring.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                GetComponent<BoxCollider2D>().enabled = false;
+                GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+                Instantiate(effect, transform.position, Quaternion.identity);
+                StartCoroutine(Normal());
+                Time.timeScale = 1;
+            }
+        }
+        else if (showResult == ShowResult.Skipped)
+        {
+            // Do not reward the user for skipping the ad.
+        }
+        else if (showResult == ShowResult.Failed)
+        {
+            Debug.LogWarning("The ad did not finish due to an error.");
+        }
+    }
 
+    public void OnUnityAdsReady(string surfacingId)
+    {
+        // If the ready Ad Unit or legacy Placement is rewarded, show the ad:
+        if (surfacingId == mySurfacingId)
+        {
+            // Optional actions to take when theAd Unit or legacy Placement becomes ready (for example, enable the rewarded ads button)
+        }
+    }
+
+    public void OnUnityAdsDidError(string message)
+    {
+        // Log the error.
+    }
+
+    public void OnUnityAdsDidStart(string surfacingId)
+    {
+        // Optional actions to take when the end-users triggers an ad.
+    }
+
+    // When the object that subscribes to ad events is destroyed, remove the listener:
+    public void OnDestroy()
+    {
+        Advertisement.RemoveListener(this);
+    }
+
+    IEnumerator Normal()
+    {
+        yield return new WaitForSeconds(3f);
+       GetComponent<BoxCollider2D>().enabled = true;
+        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+       
+    }
 
 }

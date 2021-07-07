@@ -865,7 +865,7 @@ GameObject:
   - component: {fileID: 1835481427645450905}
   - component: {fileID: 1574033253500436355}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: RBUTTON
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1410,15 +1410,17 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
-    m_FontSize: 30
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: CONTINUE?
+    m_LineSpacing: 0.5
+  m_Text: 'WATCH AN AD
+
+    TO CONTINUE'

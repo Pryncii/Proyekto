@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class dmgup : MonoBehaviour
 {
-    public GameObject open;
-    public GameObject close;
+    public GameObject Windblade;
+    public GameObject Lava;
+    public GameObject Water;
+    public GameObject Shadow;
 
 
 
@@ -15,23 +17,48 @@ public class dmgup : MonoBehaviour
     }
     void HideAndShowButtons()
     {
-        open.gameObject.SetActive(PlayerPrefs.GetInt("dmgButton") != 1);
-        close.gameObject.SetActive(PlayerPrefs.GetInt("dmgButton") != 2);
+        Windblade.gameObject.SetActive(PlayerPrefs.GetInt("Special") != 1);
+        Lava.gameObject.SetActive(PlayerPrefs.GetInt("Special") != 2);
+        Water.gameObject.SetActive(PlayerPrefs.GetInt("Special") != 3);
+        Shadow.gameObject.SetActive(PlayerPrefs.GetInt("Special") != 4);
+       
     }
 
-    public void Damagewhenclickbutton1()
+    public void wind()
     {
-
-        PlayerPrefs.SetInt("dmg", 1);
-        PlayerPrefs.Save();
-        HideAndShowButtons();
-
-    }
-    public void Damagewhenclickbutton2()
-    {
-        if (PlayerPrefs.GetInt("TotalScore", 0) >= 5000)
+        if (PlayerPrefs.GetInt("HighScore", 0) >= 100)
         {
-            PlayerPrefs.SetInt("dmg", 2);
+            PlayerPrefs.SetInt("Special", 1);
+            PlayerPrefs.Save();
+            HideAndShowButtons();
+        }
+
+    }
+    public void Lav()
+    {
+        if (PlayerPrefs.GetInt("HighScore", 0) >= 300)
+        {
+            PlayerPrefs.SetInt("Special", 2);
+            PlayerPrefs.Save();
+            HideAndShowButtons();
+        }
+    }
+
+    public void Waters()
+    {
+        if (PlayerPrefs.GetInt("HighScore", 0) >= 600)
+        {
+            PlayerPrefs.SetInt("Special", 3);
+            PlayerPrefs.Save();
+            HideAndShowButtons();
+        }
+    }
+
+    public void Shadows()
+    {
+        if (PlayerPrefs.GetInt("HighScore", 0) >= 1000)
+        {
+            PlayerPrefs.SetInt("Special", 4);
             PlayerPrefs.Save();
             HideAndShowButtons();
         }

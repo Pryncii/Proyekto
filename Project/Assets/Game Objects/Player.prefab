@@ -183,6 +183,7 @@ MonoBehaviour:
   special: {fileID: 3996476081198392242}
   scoring: {fileID: 0}
   windblade: {fileID: 986100985571432657, guid: af1179e323e318a4fb1554c186c7aec1, type: 3}
+  ShadowBarrier: {fileID: 1683038143154224864, guid: 1f85259d641b1144a9d83c189b8fc13a, type: 3}
   ButtonControl: {fileID: 410835967040793611, guid: 25145a3257cf70b45afe4fccf965eae8, type: 3}
   shotPoint: {fileID: 8387901865189049652}
 --- !u!50 &5470871080337526186

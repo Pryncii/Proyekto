@@ -53,6 +53,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
     public AudioSource special;
     public GameObject scoring;
     public GameObject windblade;
+    public GameObject ShadowBarrier;
     public GameObject ButtonControl;
     public Transform shotPoint;
 
@@ -82,6 +83,10 @@ public class Player : MonoBehaviour, IUnityAdsListener
         damage = PlayerPrefs.GetInt("Damage", 100);
         startattack = PlayerPrefs.GetInt("StartAttack", 3);
        startspecial = PlayerPrefs.GetInt("StartSpecial", 25);
+        PlayerPrefs.GetInt("Special", 0);
+        PlayerPrefs.SetInt("Special", 4);
+        windblade.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 1);
+        ShadowBarrier.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 4);
 
     }
 
@@ -150,6 +155,16 @@ public class Player : MonoBehaviour, IUnityAdsListener
                 Instantiate(windblade, shotPoint.position, transform.rotation);
                 Specialwait = startspecial;
               
+                Attack.Play();
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.RightArrow) && ShadowBarrier.activeSelf == true)
+            {
+
+                Instantiate(ShadowBarrier, shotPoint.position, transform.rotation);
+                Specialwait = startspecial;
+
                 Attack.Play();
 
             }
@@ -628,16 +643,30 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
     public void Special()
     {
-        if (Specialwait <= 0 && windblade.activeSelf == true)
+        if (Specialwait <= 0)
         {
-
-         
+            if (windblade.activeSelf == true)
+            {
                 Instantiate(windblade, shotPoint.position, transform.rotation);
                 Specialwait = startspecial;
 
                 Attack.Play();
+            }
 
+            if (ShadowBarrier.activeSelf == true)
+            {
+
+                Instantiate(ShadowBarrier, shotPoint.position, transform.rotation);
+                Specialwait = startspecial;
+
+                Attack.Play();
+
+            }
         }
+
+       
+
+
     }
 
     public void HealthUpOne()
@@ -723,6 +752,8 @@ public class Player : MonoBehaviour, IUnityAdsListener
             PlayerPrefs.SetInt("Health", 100);
         }
     }
+
+   
     public void ShowInterstitialAd()
     {
         // Check if UnityAds ready before calling Show method:

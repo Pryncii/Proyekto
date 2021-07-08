@@ -6,15 +6,19 @@ public class Windblade : MonoBehaviour
 {
 
     public float speed;
+  
     public GameObject jumpy;
     public GameObject scoring;
     public GameObject effect;
+
 
     // Start is called before the first frame update
     void Start()
     {
         scoring = FindObjectOfType<ScoreManager>().gameObject;
         Instantiate(effect, transform.position, Quaternion.identity);
+
+        
     }
 
     // Update is called once per frame

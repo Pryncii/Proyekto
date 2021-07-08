@@ -51,8 +51,11 @@ public class Player : MonoBehaviour, IUnityAdsListener
     public AudioSource Hit;
     public AudioSource jump;
     public AudioSource special;
+    public AudioSource super;
     public GameObject scoring;
     public GameObject windblade;
+    public GameObject Lavaspread;
+    public GameObject Waterjet;
     public GameObject ShadowBarrier;
     public GameObject ButtonControl;
     public Transform shotPoint;
@@ -72,6 +75,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
     // Start is called before the first frame update
     void Start()
     {
+        
         Time.timeScale = 1;
         Advertisement.AddListener(this);
         // position the player
@@ -86,6 +90,8 @@ public class Player : MonoBehaviour, IUnityAdsListener
         PlayerPrefs.GetInt("Special", 0);
        
         windblade.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 1);
+        Lavaspread.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 2);
+        Waterjet.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 3);
         ShadowBarrier.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 4);
 
     }
@@ -93,6 +99,20 @@ public class Player : MonoBehaviour, IUnityAdsListener
     // Update is called once per frame
     void Update()
     {
+
+        if (ShadowBarrier.activeSelf == true)
+        {
+            shotPoint.transform.position = new Vector2(transform.position.x - 0.2f, transform.position.y);
+        }
+        if (Lavaspread.activeSelf == true)
+        {
+            shotPoint.transform.position = new Vector2(transform.position.x + 1, transform.position.y);
+        }
+
+        if (Waterjet.activeSelf == true)
+        {
+            shotPoint.transform.position = new Vector2(transform.position.x + 1, transform.position.y);
+        }
         // UI inputs
         healthdisplay.text = health.ToString();
         cooldowndisplay.text = wait.ToString("0");
@@ -102,6 +122,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
         if (health <= 0)
         {
+
 
             ShowInterstitialAd();
             GO.SetActive(true);
@@ -154,8 +175,8 @@ public class Player : MonoBehaviour, IUnityAdsListener
                
                 Instantiate(windblade, shotPoint.position, transform.rotation);
                 Specialwait = startspecial;
-              
-                Attack.Play();
+
+                super.Play();
 
             }
 
@@ -165,10 +186,31 @@ public class Player : MonoBehaviour, IUnityAdsListener
                 Instantiate(ShadowBarrier, shotPoint.position, transform.rotation);
                 Specialwait = startspecial;
 
-                Attack.Play();
+                super.Play();
 
             }
+          
 
+                if (Input.GetKeyDown(KeyCode.RightArrow) && Lavaspread.activeSelf == true)
+            {
+
+                Instantiate(Lavaspread, shotPoint.position, transform.rotation);
+                Specialwait = startspecial;
+
+                super.Play();
+
+            }
+            
+
+            if (Input.GetKeyDown(KeyCode.RightArrow) && Waterjet.activeSelf == true)
+            {
+
+                Instantiate(Waterjet, shotPoint.position, transform.rotation);
+                Specialwait = startspecial;
+
+                super.Play();
+
+            }
 
         }
 
@@ -650,7 +692,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
                 Instantiate(windblade, shotPoint.position, transform.rotation);
                 Specialwait = startspecial;
 
-                Attack.Play();
+                super.Play();
             }
 
             if (ShadowBarrier.activeSelf == true)
@@ -659,7 +701,27 @@ public class Player : MonoBehaviour, IUnityAdsListener
                 Instantiate(ShadowBarrier, shotPoint.position, transform.rotation);
                 Specialwait = startspecial;
 
-                Attack.Play();
+                super.Play();
+
+            }
+
+            if (Lavaspread.activeSelf == true)
+            {
+
+                Instantiate(Lavaspread, shotPoint.position, transform.rotation);
+                Specialwait = startspecial;
+
+                super.Play();
+
+            }
+
+            if (Waterjet.activeSelf == true)
+            {
+
+                Instantiate(Waterjet, shotPoint.position, transform.rotation);
+                Specialwait = startspecial;
+
+                super.Play();
 
             }
         }

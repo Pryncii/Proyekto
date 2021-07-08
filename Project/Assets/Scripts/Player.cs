@@ -84,7 +84,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
         startattack = PlayerPrefs.GetInt("StartAttack", 3);
        startspecial = PlayerPrefs.GetInt("StartSpecial", 25);
         PlayerPrefs.GetInt("Special", 0);
-        PlayerPrefs.SetInt("Special", 4);
+       
         windblade.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 1);
         ShadowBarrier.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 4);
 
@@ -671,7 +671,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
     public void HealthUpOne()
     {
-        if (PlayerPrefs.GetInt("TotalScore", 0) >= 3000)
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 1000)
         {
             PlayerPrefs.SetInt("Health", 125);
 
@@ -681,7 +681,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
     public void HealthDownOne()
     {
-        if (PlayerPrefs.GetInt("TotalScore", 0) >= 3000)
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 1000)
         {
             PlayerPrefs.SetInt("Health", 100);
         }

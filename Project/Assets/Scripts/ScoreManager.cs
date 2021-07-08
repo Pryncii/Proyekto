@@ -10,8 +10,10 @@ public class ScoreManager : MonoBehaviour
     public int Totalscored;
     public Text scoreDisplay;
     public Text scoredDisplay;
+    public Text winscoredDisplay;
     public Text highScore;
     public Text highScored;
+    public Text winhighScored;
     public Text totalScore;
     public GameObject Player;
 
@@ -26,8 +28,10 @@ public class ScoreManager : MonoBehaviour
     {
         scoreDisplay.text = score.ToString();
         scoredDisplay.text = score.ToString();
+        winscoredDisplay.text = score.ToString();
         highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
         highScored.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        winhighScored.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
         totalScore.text = PlayerPrefs.GetInt("TotalScore", 0).ToString();
         if (score > PlayerPrefs.GetInt("HighScore", 0))
         {
@@ -49,6 +53,8 @@ public class ScoreManager : MonoBehaviour
             {
                 PlayerPrefs.SetInt("HighScore", score);
                     highScore.text = score.ToString();
+                highScored.text = score.ToString();
+                winhighScored.text = score.ToString();
             }
         }
 

@@ -152,6 +152,7 @@ MonoBehaviour:
   speed: 0
   jumpy: {fileID: 7726057069879884955, guid: b14bc5fd9993fd74cb828dd539f2ad2a, type: 3}
   scoring: {fileID: 0}
+  effect: {fileID: 2755403060437042195, guid: c38fb04f5086cd64d8af15e2a46df787, type: 3}
 --- !u!61 &1683038143154224888
 BoxCollider2D:
   m_ObjectHideFlags: 0

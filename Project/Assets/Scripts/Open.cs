@@ -69,7 +69,7 @@ public class Open : MonoBehaviour
     }
     public void Healthwhenclickbutton2()
     {
-        if (PlayerPrefs.GetInt("TotalScore", 0) >= 3000)
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 1000)
         {
             PlayerPrefs.SetInt("HiddenButton", 2);
             PlayerPrefs.Save();

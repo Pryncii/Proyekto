@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -494963268814882367}
   - component: {fileID: 7719620691155636672}
   - component: {fileID: -1152841158076315992}
-  - component: {fileID: -4826306664005454452}
+  - component: {fileID: 198032360821536138}
   m_Layer: 0
   m_Name: Win Portal
   m_TagString: Untagged
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  spawner: {fileID: 0}
+  Win: {fileID: 0}
 --- !u!50 &7719620691155636672
 Rigidbody2D:
   serializedVersion: 4
@@ -147,7 +147,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.820001, y: 43.510002}
   m_EdgeRadius: 0
---- !u!82 &-4826306664005454452
+--- !u!82 &198032360821536138
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,7 +157,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 25b73ff12b0b1e145983b9e44791c313, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7478151cf36724a7dada558f746c3633, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

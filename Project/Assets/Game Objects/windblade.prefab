@@ -168,6 +168,7 @@ MonoBehaviour:
   speed: 6
   jumpy: {fileID: 535563105689056248, guid: 24469dc12c7609d4da1c69221facc412, type: 3}
   scoring: {fileID: 0}
+  effect: {fileID: 6483803011412978553, guid: 95304d0fd67b3c242bd9eda906e50e07, type: 3}
 --- !u!114 &986100985571432655
 MonoBehaviour:
   m_ObjectHideFlags: 0

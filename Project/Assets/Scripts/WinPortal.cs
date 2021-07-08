@@ -6,15 +6,13 @@ public class WinPortal : MonoBehaviour
 {
 
     public float speed;
-    public GameObject spawner;
-    public GameObject enemy;
-    public GameObject Player;
+    public GameObject Win;
+   
 
     // Start is called before the first frame update
     void Start()
     {
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
-        Player = FindObjectOfType<Player>().gameObject;
+       
     }
 
     // Update is called once per frame
@@ -28,9 +26,8 @@ public class WinPortal : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GetComponent<AudioSource>().Play();
-            Destroy(spawner);
-            Destroy(Player);
-            Destroy(enemy);
+            Win.SetActive(true);
+            Time.timeScale = 0;
         }
 
     }

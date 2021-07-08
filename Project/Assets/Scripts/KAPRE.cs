@@ -10,6 +10,7 @@ public class KAPRE : MonoBehaviour
     public int health = 1000;
     public GameObject effect;
     public GameObject scoring;
+    public GameObject Win;
     private float wait;
     public float startattack;
     public Transform attackPos;
@@ -93,6 +94,9 @@ public class KAPRE : MonoBehaviour
             {
                 scoring.gameObject.GetComponent<ScoreManager>().score += 100;
             }
+
+            Win.SetActive(true);
+            Time.timeScale = 0;
         }
 
         if (wait > 0)

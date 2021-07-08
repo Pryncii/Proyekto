@@ -24,7 +24,7 @@ public class Invisible : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GetComponent<AudioSource>().Play();
+          
             Destroy(spawner);
         }
 

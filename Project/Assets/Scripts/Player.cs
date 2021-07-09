@@ -26,6 +26,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
     public LayerMask leg;
     public LayerMask Mambabarang;
     public LayerMask Kapre;
+    public LayerMask Swarme;
     public float attackRange;
     public Transform attackPos;
     private float wait;
@@ -88,7 +89,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
         startattack = PlayerPrefs.GetInt("StartAttack", 3);
        startspecial = PlayerPrefs.GetInt("StartSpecial", 25);
         PlayerPrefs.GetInt("Special", 0);
-       
+        
         windblade.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 1);
         Lavaspread.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 2);
         Waterjet.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 3);
@@ -291,6 +292,12 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
                 }
 
+                Collider2D[] swarmDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Swarme);
+                for (int a = 0; a < swarmDamage.Length; a++)
+                {
+                    StartCoroutine(Swarmy());
+
+                }
                 wait = startattack;
 
             }
@@ -383,6 +390,13 @@ public class Player : MonoBehaviour, IUnityAdsListener
                     for (int a = 0; a < KapDamage.Length; a++)
                     {
                         StartCoroutine(Kap());
+
+                    }
+
+                    Collider2D[] swarmDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Swarme);
+                    for (int a = 0; a < swarmDamage.Length; a++)
+                    {
+                        StartCoroutine(Swarmy());
 
                     }
 
@@ -584,6 +598,34 @@ public class Player : MonoBehaviour, IUnityAdsListener
             enemiesToDamage[t].GetComponent<KAPRE>().takedamage(damage);
 
             scoring.gameObject.GetComponent<ScoreManager>().score += 5;
+
+            camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+
+            camAnim.SetTrigger("shake");
+
+            Attack.Play();
+            Hit.Play();
+
+        }
+
+    }
+
+
+    IEnumerator Swarmy()
+    {
+        yield return new WaitForSeconds(0.01f);
+
+
+
+        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Swarme);
+        for (int t = 0; t < enemiesToDamage.Length; t++)
+
+        {
+
+
+            enemiesToDamage[t].GetComponent<swarm>().health -= damage;
+
+            scoring.gameObject.GetComponent<ScoreManager>().score += 1;
 
             camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 
@@ -815,7 +857,27 @@ public class Player : MonoBehaviour, IUnityAdsListener
         }
     }
 
-   
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().color = new Color(1f, 0.5f, 0.5f, 0.5f);
+            Instantiate(eff, transform.position, Quaternion.identity);
+            StartCoroutine(NormalToo());
+        }
+
+        if (other.CompareTag("leg"))
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().color = new Color(1f, 0.5f, 0.5f, 0.5f);
+            Instantiate(eff, transform.position, Quaternion.identity);
+            StartCoroutine(NormalToo());
+        }
+    }
+
+
+
     public void ShowInterstitialAd()
     {
         // Check if UnityAds ready before calling Show method:
@@ -851,7 +913,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
             {
                 // Reward the user for watching the ad to completion.
                 GO.SetActive(false);
-                Instantiate(gameObject);
+              
                 gameObject.SetActive(true);
                 health = 50;
                 scoring.gameObject.GetComponent<BoxCollider2D>().enabled = true;
@@ -903,6 +965,14 @@ public class Player : MonoBehaviour, IUnityAdsListener
        GetComponent<BoxCollider2D>().enabled = true;
         GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
        
+    }
+
+    IEnumerator NormalToo()
+    {
+        yield return new WaitForSeconds(1f);
+        GetComponent<BoxCollider2D>().enabled = true;
+        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+
     }
 
 }

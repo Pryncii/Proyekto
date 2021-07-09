@@ -20,7 +20,11 @@ public class LevelAttempt : MonoBehaviour
         Lv4();
         Lv5();
         Lv6();
-       
+        PlayerPrefs.GetInt("lv2", 0);
+        PlayerPrefs.GetInt("lv3", 0);
+        PlayerPrefs.GetInt("lv4", 0);
+        PlayerPrefs.GetInt("lv5", 0);
+        PlayerPrefs.GetInt("lv6", 0);
 
 
 

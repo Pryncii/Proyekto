@@ -160,6 +160,9 @@ MonoBehaviour:
   Kapre:
     serializedVersion: 2
     m_Bits: 4096
+  Swarme:
+    serializedVersion: 2
+    m_Bits: 8192
   attackRange: 0.8
   attackPos: {fileID: 6117141765191694134}
   startattack: 3

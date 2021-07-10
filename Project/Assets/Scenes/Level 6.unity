@@ -2407,6 +2407,10 @@ PrefabInstance:
       value: 1024
       objectReference: {fileID: 0}
     - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
+      propertyPath: SpecialButton
+      value: 
+      objectReference: {fileID: 1371766855}
+    - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
       propertyPath: healthdisplay
       value: 
       objectReference: {fileID: 750402929}
@@ -3529,6 +3533,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1723734713088917845, guid: ad975eae62d89a54d90754710beb8a96, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ad975eae62d89a54d90754710beb8a96, type: 3}
+--- !u!1 &1371766855 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1779006216409672222, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
+  m_PrefabInstance: {fileID: 1167692012}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1390128391
 GameObject:
   m_ObjectHideFlags: 0

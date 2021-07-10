@@ -1535,6 +1535,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548406759}
   m_CullTransparentMesh: 1
+--- !u!1 &555668839 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1779006216409672222, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
+  m_PrefabInstance: {fileID: 1167692012}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &579519987
 GameObject:
   m_ObjectHideFlags: 0
@@ -2544,6 +2549,10 @@ PrefabInstance:
       propertyPath: leg.m_Bits
       value: 1024
       objectReference: {fileID: 0}
+    - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
+      propertyPath: SpecialButton
+      value: 
+      objectReference: {fileID: 555668839}
     - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
       propertyPath: healthdisplay
       value: 

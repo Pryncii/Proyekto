@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
+using UnityEngine.EventSystems;
 
 
 
@@ -12,7 +13,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
 {
 
-
+    public GameObject SpecialButton;
     public Text healthdisplay;
     public Text cooldowndisplay;
     public Text cooldownspecial;
@@ -131,9 +132,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
             Instantiate(eff, transform.position, Quaternion.identity);
             scoring.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             Time.timeScale = 0;
-            ScoreManager Total = scoring.GetComponent<ScoreManager>();
             
-            PlayerPrefs.SetInt("TotalScore", Total.Totalscored += Total.score);
         }
 
         // PC Move up
@@ -160,6 +159,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
         if (Specialwait > 0)
         {
             Specialwait -= Time.deltaTime;
+            SpecialButton.SetActive(false);
 
         }
         if (Specialwait >= 0.01 && Specialwait <= 0.06)
@@ -170,6 +170,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
         if (Specialwait <= 0)
         {
             cooldownspecial.text = ("Ready");
+            SpecialButton.SetActive(true);
 
             if (Input.GetKeyDown(KeyCode.RightArrow) && windblade.activeSelf == true)
             {
@@ -302,17 +303,30 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
             }
         }
-       
+
+
+
+
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
             startTouchPosition = Input.GetTouch(0).position;
+
+            if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+            {
+                Debug.Log("Touch");
+                startattack = 0;
+                StartCoroutine(SpeedNormal());
+            }
+        }
+            
+        
 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         {
             endTouchPosition = Input.GetTouch(0).position;
 
-            
 
-            if ((endTouchPosition.y < startTouchPosition.y) && transform.position.y > minheight && ButtonControl.activeSelf == false)
+            if ((endTouchPosition.y < startTouchPosition.y) && transform.position.y > minheight)
             {
                
                 targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
@@ -324,7 +338,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
             }
 
-            if ((endTouchPosition.y > startTouchPosition.y) && transform.position.y < maxheight && ButtonControl.activeSelf == false)
+            if ((endTouchPosition.y > startTouchPosition.y) && transform.position.y < maxheight)
 
             {
                
@@ -339,6 +353,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
             if (wait <= 0)
             {
+               
 
 
                 if ((endTouchPosition.x >= startTouchPosition.x) && (endTouchPosition.y == startTouchPosition.y) && ButtonControl.activeSelf == false)
@@ -407,6 +422,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
                 }
             }
 
+           
         }
 
         
@@ -638,6 +654,21 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
     }
 
+    IEnumerator SpeedNormal()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        if (PlayerPrefs.GetInt("StartAttack", 3) == 3)
+        {
+            startattack = 3;
+        }
+
+        if (PlayerPrefs.GetInt("StartAttack", 3) == 2) 
+        {
+            startattack = 2;
+        }
+    }
+
     public void moveup()
     {
         if (transform.position.y < maxheight)
@@ -727,46 +758,53 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
     public void Special()
     {
+
+       
+
+
+
+
         if (Specialwait <= 0)
-        {
-            if (windblade.activeSelf == true)
             {
-                Instantiate(windblade, shotPoint.position, transform.rotation);
-                Specialwait = startspecial;
+                if (windblade.activeSelf == true)
+                {
+                    Instantiate(windblade, shotPoint.position, transform.rotation);
+                    Specialwait = startspecial;
 
-                super.Play();
+                    super.Play();
+                }
+
+                if (ShadowBarrier.activeSelf == true)
+                {
+
+                    Instantiate(ShadowBarrier, shotPoint.position, transform.rotation);
+                    Specialwait = startspecial;
+
+                    super.Play();
+
+                }
+
+                if (Lavaspread.activeSelf == true)
+                {
+
+                    Instantiate(Lavaspread, shotPoint.position, transform.rotation);
+                    Specialwait = startspecial;
+
+                    super.Play();
+
+                }
+
+                if (Waterjet.activeSelf == true)
+                {
+
+                    Instantiate(Waterjet, shotPoint.position, transform.rotation);
+                    Specialwait = startspecial;
+
+                    super.Play();
+
+                }
             }
-
-            if (ShadowBarrier.activeSelf == true)
-            {
-
-                Instantiate(ShadowBarrier, shotPoint.position, transform.rotation);
-                Specialwait = startspecial;
-
-                super.Play();
-
-            }
-
-            if (Lavaspread.activeSelf == true)
-            {
-
-                Instantiate(Lavaspread, shotPoint.position, transform.rotation);
-                Specialwait = startspecial;
-
-                super.Play();
-
-            }
-
-            if (Waterjet.activeSelf == true)
-            {
-
-                Instantiate(Waterjet, shotPoint.position, transform.rotation);
-                Specialwait = startspecial;
-
-                super.Play();
-
-            }
-        }
+        
 
        
 

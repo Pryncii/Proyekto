@@ -94,7 +94,9 @@ public class KAPRE : MonoBehaviour
             {
                 scoring.gameObject.GetComponent<ScoreManager>().score += 100;
             }
+            ScoreManager Total = scoring.GetComponent<ScoreManager>();
 
+            PlayerPrefs.SetInt("TotalScore", Total.Totalscored += Total.score);
             Win.SetActive(true);
             Time.timeScale = 0;
         }

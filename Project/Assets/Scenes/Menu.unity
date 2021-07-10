@@ -5504,6 +5504,10 @@ PrefabInstance:
       propertyPath: ButtonControl
       value: 
       objectReference: {fileID: 1426724674}
+    - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
+      propertyPath: SpecialButton
+      value: 
+      objectReference: {fileID: 1195721173}
     - target: {fileID: 5470871080337526187, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -13294,6 +13298,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192980999}
   m_CullTransparentMesh: 1
+--- !u!1 &1195721173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7416759825237193412, guid: 4b29edfd06400724d870fb7969397fbd, type: 3}
+  m_PrefabInstance: {fileID: 7416759824263504174}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1197801487
 GameObject:
   m_ObjectHideFlags: 0

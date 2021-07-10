@@ -1827,6 +1827,10 @@ PrefabInstance:
       value: 1024
       objectReference: {fileID: 0}
     - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
+      propertyPath: SpecialButton
+      value: 
+      objectReference: {fileID: 5204838914571573194}
+    - target: {fileID: 5470871080337526185, guid: 69cc648429adf094c8d93188c3d5bd60, type: 3}
       propertyPath: healthdisplay
       value: 
       objectReference: {fileID: 1856377040}
@@ -2578,3 +2582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5204838914571573194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1779006216409672222, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
+  m_PrefabInstance: {fileID: 5204838914571573191}
+  m_PrefabAsset: {fileID: 0}

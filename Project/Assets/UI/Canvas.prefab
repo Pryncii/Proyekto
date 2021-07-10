@@ -1167,7 +1167,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5257643401869788580, guid: a4e79d1f2c232584190fb0a51e95d898, type: 3}
       propertyPath: m_Name
-      value: Button (4)
+      value: SpecialButton
       objectReference: {fileID: 0}
     - target: {fileID: 5257643401869788601, guid: a4e79d1f2c232584190fb0a51e95d898, type: 3}
       propertyPath: m_Color.a

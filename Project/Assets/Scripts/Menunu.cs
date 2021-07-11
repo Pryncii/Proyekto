@@ -18,4 +18,11 @@ public class Menunu : MonoBehaviour
 
         PlayerPrefs.SetInt("TotalScore", Total.Totalscored += Total.score);
     }
+
+    public void win()
+    {
+        SceneManager.LoadScene("Menu");
+        GetComponent<AudioSource>().Play();
+       
+    }
 }

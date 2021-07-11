@@ -95,12 +95,15 @@ public class Player : MonoBehaviour, IUnityAdsListener
         Lavaspread.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 2);
         Waterjet.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 3);
         ShadowBarrier.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 4);
+        cooldownspecial.gameObject.SetActive(PlayerPrefs.GetInt("Special") >= 1);
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
 
         if (ShadowBarrier.activeSelf == true)
         {
@@ -133,6 +136,16 @@ public class Player : MonoBehaviour, IUnityAdsListener
             scoring.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             Time.timeScale = 0;
             
+        }
+
+        if (health <= 25)
+        {
+            healthdisplay.GetComponent<Text>().color = new Color(1f, 0.1f, 0.1f, 1f);
+        }
+
+        if (health > 25)
+        {
+            healthdisplay.GetComponent<Text>().color = new Color(1f, 1f, 1f, 1f);
         }
 
         // PC Move up
@@ -235,7 +248,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
             cooldowndisplay.text = ("Ready");
 
          
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space) && gameObject != null)
             {
 
                 Attack.Play();
@@ -356,7 +369,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
                
 
 
-                if ((endTouchPosition.x >= startTouchPosition.x) && (endTouchPosition.y == startTouchPosition.y) && ButtonControl.activeSelf == false)
+                if ((endTouchPosition.x >= startTouchPosition.x) && (endTouchPosition.y == startTouchPosition.y) && ButtonControl.activeSelf == false && gameObject != null)
                 {
 
                     Attack.Play();
@@ -999,7 +1012,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
     IEnumerator Normal()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
        GetComponent<BoxCollider2D>().enabled = true;
         GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
        

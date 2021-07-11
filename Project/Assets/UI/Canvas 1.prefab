@@ -476,6 +476,7 @@ GameObject:
   - component: {fileID: 4294121614780246937}
   - component: {fileID: 4061655194675015427}
   - component: {fileID: 8513908719943709220}
+  - component: {fileID: 3573784783971604443}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -586,7 +587,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8513908719943709220}
         m_TargetAssemblyTypeName: Menunu, Assembly-CSharp
-        m_MethodName: begin
+        m_MethodName: win
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3573784783971604443}
+        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
+        m_MethodName: ShowInterstitialAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -705,6 +718,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoring: {fileID: 0}
+--- !u!114 &3573784783971604443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7325951023386840375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc14d77edc3faba4ea5786ccd7deb06f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7625208524601912785
 GameObject:
   m_ObjectHideFlags: 0

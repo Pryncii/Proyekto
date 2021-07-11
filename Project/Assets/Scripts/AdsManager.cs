@@ -13,7 +13,7 @@ public class AdsManager : MonoBehaviour
 #elif UNITY_ANDROID
     private string gameId = "4190595";
 #endif
-    public float health;
+  
     bool testMode = true;
 
     void Start()

@@ -12,7 +12,7 @@ using UnityEngine.EventSystems;
 public class Player : MonoBehaviour, IUnityAdsListener
 
 {
-
+    public Animator Hero;
     public GameObject SpecialButton;
     public Text healthdisplay;
     public Text cooldowndisplay;
@@ -187,7 +187,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
             if (Input.GetKeyDown(KeyCode.RightArrow) && windblade.activeSelf == true)
             {
-               
+                Hero.SetTrigger("Attack");
                 Instantiate(windblade, shotPoint.position, transform.rotation);
                 Specialwait = startspecial;
 
@@ -200,7 +200,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
                 Instantiate(ShadowBarrier, shotPoint.position, transform.rotation);
                 Specialwait = startspecial;
-
+                Hero.SetTrigger("Attack");
                 super.Play();
 
             }
@@ -211,7 +211,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
                 Instantiate(Lavaspread, shotPoint.position, transform.rotation);
                 Specialwait = startspecial;
-
+                Hero.SetTrigger("Attack");
                 super.Play();
 
             }
@@ -222,7 +222,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
                 Instantiate(Waterjet, shotPoint.position, transform.rotation);
                 Specialwait = startspecial;
-
+                Hero.SetTrigger("Attack");
                 super.Play();
 
             }
@@ -248,9 +248,9 @@ public class Player : MonoBehaviour, IUnityAdsListener
             cooldowndisplay.text = ("Ready");
 
          
-                if (Input.GetKeyDown(KeyCode.Space) && gameObject != null)
+                if (Input.GetKeyDown(KeyCode.Space) && gameObject.activeSelf == true)
             {
-
+                Hero.SetTrigger("Attack");
                 Attack.Play();
 
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, kiwig);
@@ -369,9 +369,9 @@ public class Player : MonoBehaviour, IUnityAdsListener
                
 
 
-                if ((endTouchPosition.x >= startTouchPosition.x) && (endTouchPosition.y == startTouchPosition.y) && ButtonControl.activeSelf == false && gameObject != null)
+                if ((endTouchPosition.x >= startTouchPosition.x) && (endTouchPosition.y == startTouchPosition.y) && ButtonControl.activeSelf == false && gameObject.activeSelf == true)
                 {
-
+                    Hero.SetTrigger("Attack");
                     Attack.Play();
 
                     Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, kiwig);
@@ -772,9 +772,9 @@ public class Player : MonoBehaviour, IUnityAdsListener
     public void Special()
     {
 
-       
 
 
+        Hero.SetTrigger("Attack");
 
 
         if (Specialwait <= 0)

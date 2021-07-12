@@ -26,37 +26,43 @@ public class Open : MonoBehaviour
         HideAndShowButtonsspd();
         HideAndShowButtonspspd();
         HideAndShowButtonhp();
+
+        PlayerPrefs.GetInt("HiddenButton", 1);
+        PlayerPrefs.GetInt("HidButton", 1);
+        PlayerPrefs.GetInt("spdButton", 1);
+        PlayerPrefs.GetInt("spspdButton", 1);
+        PlayerPrefs.GetInt("hpButton", 1);
     }
     void HideAndShowButtons()
     {
-        open.gameObject.SetActive(PlayerPrefs.GetInt("HiddenButton") != 1);
-        close.gameObject.SetActive(PlayerPrefs.GetInt("HiddenButton") != 2);
+        open.gameObject.SetActive(PlayerPrefs.GetInt("HiddenButton", 1) != 1);
+        close.gameObject.SetActive(PlayerPrefs.GetInt("HiddenButton", 1) != 2);
         
     }
 
     void HideAndShowButtonsdmg()
     {
-        dmg1.gameObject.SetActive(PlayerPrefs.GetInt("HidButton") != 1);
-        dmg2.gameObject.SetActive(PlayerPrefs.GetInt("HidButton") != 2);
+        dmg1.gameObject.SetActive(PlayerPrefs.GetInt("HidButton", 1) != 1);
+        dmg2.gameObject.SetActive(PlayerPrefs.GetInt("HidButton", 1) != 2);
     }
 
     void HideAndShowButtonsspd()
     {
-        spd1.gameObject.SetActive(PlayerPrefs.GetInt("spdButton") != 1);
-        spd2.gameObject.SetActive(PlayerPrefs.GetInt("spdButton") != 2);
+        spd1.gameObject.SetActive(PlayerPrefs.GetInt("spdButton", 1) != 1);
+        spd2.gameObject.SetActive(PlayerPrefs.GetInt("spdButton", 1) != 2);
     }
 
 
     void HideAndShowButtonspspd()
     {
-        spspd1.gameObject.SetActive(PlayerPrefs.GetInt("spspdButton") != 1);
-        spspd2.gameObject.SetActive(PlayerPrefs.GetInt("spspdButton") != 2);
+        spspd1.gameObject.SetActive(PlayerPrefs.GetInt("spspdButton", 1) != 1);
+        spspd2.gameObject.SetActive(PlayerPrefs.GetInt("spspdButton", 1) != 2);
     }
 
     void HideAndShowButtonhp()
     {
-        hp1.gameObject.SetActive(PlayerPrefs.GetInt("hpButton") != 1);
-        hp2.gameObject.SetActive(PlayerPrefs.GetInt("hpButton") != 2);
+        hp1.gameObject.SetActive(PlayerPrefs.GetInt("hpButton", 1) != 1);
+        hp2.gameObject.SetActive(PlayerPrefs.GetInt("hpButton", 1) != 2);
     }
 
     public void Healthwhenclickbutton1()

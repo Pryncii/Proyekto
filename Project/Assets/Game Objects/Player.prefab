@@ -136,6 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e376e67ae289c541ac32420720bf304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hero: {fileID: 7257281644283897063}
+  SpecialButton: {fileID: 0}
   healthdisplay: {fileID: 6309860515812841611, guid: eb514dc3bf5f31645b4edc535205e615, type: 3}
   cooldowndisplay: {fileID: 7584849782622166182, guid: 1140704e443ae254eab030d6e6d03bd4, type: 3}
   cooldownspecial: {fileID: 5891037030401796622, guid: 2072b1f3abef1844a8dc7b5ce89ed438, type: 3}

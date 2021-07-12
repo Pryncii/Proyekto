@@ -39,17 +39,17 @@ public class KAPRE : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
 
-        if (health <= 1300)
+        if (health <= 1000)
         {
             GetComponent<SpriteRenderer>().color = new Color(1, 0.9f, 0.9f, 1);
         }
 
-        if (health <= 1100)
+        if (health <= 900)
         {
             GetComponent<SpriteRenderer>().color = new Color(1, 0.8f, 0.8f, 1);
         }
 
-        if (health <= 900)
+        if (health <= 800)
         {
             GetComponent<SpriteRenderer>().color = new Color(1, 0.7f, 0.7f, 1);
         }
@@ -58,7 +58,10 @@ public class KAPRE : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = new Color(1, 0.6f, 0.6f, 1);
         }
-
+        if (health <= 600)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 0.55f, 0.55f, 1);
+        }
         if (health <= 500)
         {
             GetComponent<SpriteRenderer>().color = new Color(1, 0.5f, 0.5f, 1);

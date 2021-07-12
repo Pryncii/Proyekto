@@ -11,7 +11,8 @@ public class LevelAttempt : MonoBehaviour
     public GameObject L4;
     public GameObject L5;
     public GameObject L6;
-   
+    public GameObject L6book;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +21,13 @@ public class LevelAttempt : MonoBehaviour
         Lv4();
         Lv5();
         Lv6();
+        Book();
         PlayerPrefs.GetInt("lv2", 0);
         PlayerPrefs.GetInt("lv3", 0);
         PlayerPrefs.GetInt("lv4", 0);
         PlayerPrefs.GetInt("lv5", 0);
         PlayerPrefs.GetInt("lv6", 0);
+        PlayerPrefs.GetInt("Book", 0);
 
 
 
@@ -56,6 +59,13 @@ public class LevelAttempt : MonoBehaviour
     void Lv6()
     {
         L6.gameObject.SetActive(PlayerPrefs.GetInt("lv6") >= 6);
+        
+    }
+
+    void Book()
+    {
+       
+        L6book.gameObject.SetActive(PlayerPrefs.GetInt("Book") >= 7);
     }
 
     public void Lv1Click()
@@ -68,6 +78,7 @@ public class LevelAttempt : MonoBehaviour
         Lv4();
         Lv5();
         Lv6();
+        Book();
 
 
 
@@ -83,7 +94,7 @@ public class LevelAttempt : MonoBehaviour
         Lv4();
         Lv5();
         Lv6();
-
+        Book();
     }
 
     public void Lv3Click()
@@ -96,6 +107,7 @@ public class LevelAttempt : MonoBehaviour
         Lv4();
         Lv5();
         Lv6();
+        Book();
 
     }
 
@@ -109,6 +121,7 @@ public class LevelAttempt : MonoBehaviour
         Lv4();
         Lv5();
         Lv6();
+        Book();
 
     }
 
@@ -122,6 +135,21 @@ public class LevelAttempt : MonoBehaviour
         Lv4();
         Lv5();
         Lv6();
+        Book();
+
+    }
+
+    public void Lv6Click()
+    {
+
+        PlayerPrefs.SetInt("Book", 7);
+        PlayerPrefs.Save();
+        Lv2();
+        Lv3();
+        Lv4();
+        Lv5();
+        Lv6();
+        Book();
 
     }
 }

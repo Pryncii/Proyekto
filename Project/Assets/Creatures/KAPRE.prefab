@@ -167,9 +167,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  health: 1500
+  health: 1000
   effect: {fileID: 6516962723819460984, guid: e5fb4473d8878b648b09abc4ae25b650, type: 3}
   scoring: {fileID: 0}
+  Win: {fileID: 0}
   startattack: 3
   attackPos: {fileID: 6078494156782671303}
   attackRange: 4

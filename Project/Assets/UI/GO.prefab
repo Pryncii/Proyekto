@@ -142,7 +142,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 8
   m_TargetDisplay: 0
 --- !u!114 &1655323575928775746
 MonoBehaviour:
@@ -501,6 +501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8cf8bfae7924f040bb5fbcd22386989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoring: {fileID: 0}
 --- !u!82 &1655323577311850661
 AudioSource:
   m_ObjectHideFlags: 0
@@ -933,7 +934,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc14d77edc3faba4ea5786ccd7deb06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
 --- !u!1 &5363969461718588779
 GameObject:
   m_ObjectHideFlags: 0

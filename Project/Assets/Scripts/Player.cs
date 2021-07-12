@@ -96,6 +96,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
         Waterjet.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 3);
         ShadowBarrier.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 4);
         cooldownspecial.gameObject.SetActive(PlayerPrefs.GetInt("Special") >= 1);
+       
 
     }
 
@@ -339,7 +340,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
             endTouchPosition = Input.GetTouch(0).position;
 
 
-            if ((endTouchPosition.y < startTouchPosition.y) && transform.position.y > minheight)
+            if ((endTouchPosition.y < startTouchPosition.y) && transform.position.y > minheight && ButtonControl.activeSelf == false && gameObject.activeSelf == true)
             {
                
                 targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
@@ -351,7 +352,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
             }
 
-            if ((endTouchPosition.y > startTouchPosition.y) && transform.position.y < maxheight)
+            if ((endTouchPosition.y > startTouchPosition.y) && transform.position.y < maxheight && ButtonControl.activeSelf == false && gameObject.activeSelf == true)
 
             {
                
@@ -369,7 +370,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
                
 
 
-                if ((endTouchPosition.x >= startTouchPosition.x) && (endTouchPosition.y == startTouchPosition.y) && ButtonControl.activeSelf == false && gameObject.activeSelf == true)
+                if ((endTouchPosition == startTouchPosition) && ButtonControl.activeSelf == false && gameObject.activeSelf == true)
                 {
                     Hero.SetTrigger("Attack");
                     Attack.Play();
@@ -765,6 +766,13 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
         }
 
+        Collider2D[] swarmDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Swarme);
+        for (int a = 0; a < swarmDamage.Length; a++)
+        {
+            StartCoroutine(Swarmy());
+
+        }
+
 
         wait = startattack;
     }
@@ -779,6 +787,17 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
         if (Specialwait <= 0)
             {
+            if(PlayerPrefs.GetInt("Special") <= 0)
+            {
+                Specialwait = startspecial;
+
+                Attack.Play();
+            }
+
+            if (windblade.activeSelf == true)
+            {
+
+            }
                 if (windblade.activeSelf == true)
                 {
                     Instantiate(windblade, shotPoint.position, transform.rotation);

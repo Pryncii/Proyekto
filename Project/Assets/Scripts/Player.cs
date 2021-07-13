@@ -12,6 +12,7 @@ using UnityEngine.EventSystems;
 public class Player : MonoBehaviour, IUnityAdsListener
 
 {
+
     public Animator Hero;
     public GameObject SpecialButton;
     public Text healthdisplay;
@@ -70,7 +71,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
     private string gameId = "4190595";
 #endif
 
-    bool testMode = true;
+    bool testMode = false;
 
 
 

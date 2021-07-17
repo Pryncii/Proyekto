@@ -89,41 +89,7 @@ public class Tiktik : MonoBehaviour
             wait = startattack;
         }
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-            startTouchPosition = Input.GetTouch(0).position;
-
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-        {
-            endTouchPosition = Input.GetTouch(0).position;
-
-
-
-            if ((endTouchPosition.y < startTouchPosition.y))
-            {
-
-                tiktikanim.SetBool("Moving", true);
-
-
-
-
-            }
-
-            if ((endTouchPosition.y > startTouchPosition.y))
-
-            {
-
-                tiktikanim.SetBool("Moving", true);
-
-
-
-
-            }
-
-
-
-
-
-        }
+        
 
 
     }
@@ -149,6 +115,11 @@ public class Tiktik : MonoBehaviour
         }
 
 
+    }
+
+    public void move()
+    {
+        tiktikanim.SetBool("Moving", true);
     }
 
     IEnumerator Timedelay()

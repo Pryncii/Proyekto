@@ -56,40 +56,8 @@ public class Decoy : MonoBehaviour
         }
 
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-            startTouchPosition = Input.GetTouch(0).position;
-
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-        {
-            endTouchPosition = Input.GetTouch(0).position;
-
-
-
-            if ((endTouchPosition.y < startTouchPosition.y) && transform.position.y > minheight && Total != null)
-            {
-
-                targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
-                transform.position = targetPos;
-
-
-
-            }
-
-            if ((endTouchPosition.y > startTouchPosition.y) && transform.position.y < maxheight && Total != null)
-
-            {
-
-                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                transform.position = targetPos;
-            }
-
-            if ((endTouchPosition.x > startTouchPosition.x) && transform.position.y < maxheight)
-            {
-
-            }
-
-
-        }
+        
+        
 
 
     }
@@ -97,22 +65,22 @@ public class Decoy : MonoBehaviour
 
     public void moveup()
     {
-        if (transform.position.y < maxheight)
+        if (transform.position.y < maxheight && Player.activeSelf == true)
         {
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
             transform.position = targetPos;
-           
+
         }
     }
 
     public void movedown()
     {
-        if (transform.position.y > minheight)
+        if (transform.position.y > minheight && Player.activeSelf == true)
         {
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
             transform.position = targetPos;
         }
-        
+
     }
 
 

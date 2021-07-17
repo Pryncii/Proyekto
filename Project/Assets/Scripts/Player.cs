@@ -15,6 +15,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
     public Animator Hero;
     public GameObject SpecialButton;
+    public GameObject AttButton;
     public Text healthdisplay;
     public Text cooldowndisplay;
     public Text cooldownspecial;
@@ -236,6 +237,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
         if (wait > 0)
         {
             wait -= Time.deltaTime;
+            AttButton.SetActive(false);
 
         }
 
@@ -248,9 +250,9 @@ public class Player : MonoBehaviour, IUnityAdsListener
         if (wait <= 0)
         {
             cooldowndisplay.text = ("Ready");
+            AttButton.SetActive(true);
 
-         
-                if (Input.GetKeyDown(KeyCode.Space) && gameObject.activeSelf == true)
+            if (Input.GetKeyDown(KeyCode.Space) && gameObject.activeSelf == true)
             {
                 Hero.SetTrigger("Attack");
                 Attack.Play();
@@ -319,128 +321,6 @@ public class Player : MonoBehaviour, IUnityAdsListener
             }
         }
 
-
-
-
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-        {
-            startTouchPosition = Input.GetTouch(0).position;
-
-            if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
-            {
-                Debug.Log("Touch");
-                startattack = 0;
-                StartCoroutine(SpeedNormal());
-            }
-        }
-            
-        
-
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-        {
-            endTouchPosition = Input.GetTouch(0).position;
-
-
-            if ((endTouchPosition.y < startTouchPosition.y) && transform.position.y > minheight && ButtonControl.activeSelf == false && gameObject.activeSelf == true)
-            {
-               
-                targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
-                Instantiate(jumpy, transform.position, Quaternion.identity);
-                transform.position = targetPos;
-                Instantiate(effect, transform.position, Quaternion.identity);
-
-
-
-            }
-
-            if ((endTouchPosition.y > startTouchPosition.y) && transform.position.y < maxheight && ButtonControl.activeSelf == false && gameObject.activeSelf == true)
-
-            {
-               
-                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                Instantiate(jumpy, transform.position, Quaternion.identity);
-                transform.position = targetPos;
-                Instantiate(effect, transform.position, Quaternion.identity);
-
-
-
-            }
-
-            if (wait <= 0)
-            {
-               
-
-
-                if ((endTouchPosition == startTouchPosition) && ButtonControl.activeSelf == false && gameObject.activeSelf == true)
-                {
-                    Hero.SetTrigger("Attack");
-                    Attack.Play();
-
-                    Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, kiwig);
-                    for (int i = 0; i < enemiesToDamage.Length; i++)
-                    {
-
-                        StartCoroutine(Timedelay());
-                       
-
-                    }
-
-                    Collider2D[] ToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, sarangay);
-                    for (int a = 0; a < ToDamage.Length; a++)
-                    {
-                        StartCoroutine(Bull());
-                    }
-
-                    Collider2D[] TikDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, tiktik);
-                    for (int a = 0; a < TikDamage.Length; a++)
-                    {
-                        StartCoroutine(Tik());
-                    }
-
-                    Collider2D[] ManaDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Manananggal);
-                    for (int a = 0; a < ManaDamage.Length; a++)
-                    {
-                        StartCoroutine(Bik());
-                    }
-
-
-                    Collider2D[] legDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, leg);
-                    for (int a = 0; a < legDamage.Length; a++)
-                    {
-                        StartCoroutine(Leg());
-                    }
-
-                    Collider2D[] MamDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Mambabarang);
-                    for (int a = 0; a < MamDamage.Length; a++)
-                    {
-                        StartCoroutine(Mam());
-                    }
-
-                    Collider2D[] KapDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Kapre);
-                    for (int a = 0; a < KapDamage.Length; a++)
-                    {
-                        StartCoroutine(Kap());
-
-                    }
-
-                    Collider2D[] swarmDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Swarme);
-                    for (int a = 0; a < swarmDamage.Length; a++)
-                    {
-                        StartCoroutine(Swarmy());
-
-                    }
-
-
-
-                    wait = startattack;
-
-                }
-            }
-
-           
-        }
-
-        
 
 
     }
@@ -686,7 +566,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
     public void moveup()
     {
-        if (transform.position.y < maxheight)
+        if (transform.position.y < maxheight && ButtonControl.activeSelf == false && gameObject.activeSelf == true)
         {
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
             transform.position = targetPos;
@@ -699,7 +579,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
     public void movedown()
     {
 
-        if (transform.position.y > minheight)
+        if (transform.position.y > minheight && ButtonControl.activeSelf == false && gameObject.activeSelf == true)
         {
 
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
@@ -713,67 +593,67 @@ public class Player : MonoBehaviour, IUnityAdsListener
     public void att()
     {
         Attack.Play();
+        Hero.SetTrigger("Attack");
 
-        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, kiwig);
-        for (int i = 0; i < enemiesToDamage.Length; i++)
+        if (wait <= 0)
         {
+            if (ButtonControl.activeSelf == false && gameObject.activeSelf == true)
+            {
+
+                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, kiwig);
+                for (int i = 0; i < enemiesToDamage.Length; i++)
+                {
+                    StartCoroutine(Timedelay());
+                }
+
+                Collider2D[] ToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, sarangay);
+                for (int a = 0; a < ToDamage.Length; a++)
+                {
+                    StartCoroutine(Bull());
+                }
+
+                Collider2D[] TikDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, tiktik);
+                for (int a = 0; a < TikDamage.Length; a++)
+                {
+                    StartCoroutine(Tik());
+                }
+
+                Collider2D[] ManaDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Manananggal);
+                for (int a = 0; a < ManaDamage.Length; a++)
+                {
+                    StartCoroutine(Bik());
+                }
 
 
+                Collider2D[] legDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, leg);
+                for (int a = 0; a < legDamage.Length; a++)
+                {
+                    StartCoroutine(Leg());
+                }
 
-            StartCoroutine(Timedelay());
+                Collider2D[] MamDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Mambabarang);
+                for (int a = 0; a < MamDamage.Length; a++)
+                {
+                    StartCoroutine(Mam());
+                }
 
+                Collider2D[] KapDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Kapre);
+                for (int a = 0; a < KapDamage.Length; a++)
+                {
+                    StartCoroutine(Kap());
 
+                }
 
+                Collider2D[] swarmDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Swarme);
+                for (int a = 0; a < swarmDamage.Length; a++)
+                {
+                    StartCoroutine(Swarmy());
 
+                }
 
+            }
 
         }
-
-        Collider2D[] ToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, sarangay);
-        for (int a = 0; a < ToDamage.Length; a++)
-        {
-            StartCoroutine(Bull());
-        }
-
-        Collider2D[] TikDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, tiktik);
-        for (int a = 0; a < TikDamage.Length; a++)
-        {
-            StartCoroutine(Tik());
-        }
-
-        Collider2D[] ManaDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Manananggal);
-        for (int a = 0; a < ManaDamage.Length; a++)
-        {
-            StartCoroutine(Bik());
-        }
-
-
-        Collider2D[] legDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, leg);
-        for (int a = 0; a < legDamage.Length; a++)
-        {
-            StartCoroutine(Leg());
-        }
-
-        Collider2D[] MamDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Mambabarang);
-        for (int a = 0; a < MamDamage.Length; a++)
-        {
-            StartCoroutine(Mam());
-        }
-
-        Collider2D[] KapDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Kapre);
-        for (int a = 0; a < KapDamage.Length; a++)
-        {
-            StartCoroutine(Kap());
-
-        }
-
-        Collider2D[] swarmDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, Swarme);
-        for (int a = 0; a < swarmDamage.Length; a++)
-        {
-            StartCoroutine(Swarmy());
-
-        }
-
 
         wait = startattack;
     }

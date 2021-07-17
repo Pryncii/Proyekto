@@ -73,7 +73,7 @@ public class Sarangay : MonoBehaviour
 
         if (dazetime <= 0)
         {
-            speed = 17;
+            speed = 15;
             anim.SetBool("Dizzy", false);
             
         }

@@ -36,7 +36,7 @@ public class dmgup : MonoBehaviour
     }
     public void Lav()
     {
-        if (PlayerPrefs.GetInt("HighScore", 0) >= 300)
+        if (PlayerPrefs.GetInt("HighScore", 0) >= 500)
         {
             PlayerPrefs.SetInt("Special", 2);
             PlayerPrefs.Save();
@@ -46,7 +46,7 @@ public class dmgup : MonoBehaviour
 
     public void Waters()
     {
-        if (PlayerPrefs.GetInt("HighScore", 0) >= 600)
+        if (PlayerPrefs.GetInt("HighScore", 0) >= 750)
         {
             PlayerPrefs.SetInt("Special", 3);
             PlayerPrefs.Save();

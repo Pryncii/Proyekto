@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Endless.unity
     guid: c631f8fe73cc1cf48aa36541bb34eba0
+  - enabled: 1
+    path: Assets/Scenes/Impossible.unity
+    guid: 6b2c576f6fd169f41ace837e5f30e7c5
   m_configObjects: {}

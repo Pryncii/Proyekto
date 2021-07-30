@@ -12,6 +12,7 @@ public class LevelAttempt : MonoBehaviour
     public GameObject L5;
     public GameObject L6;
     public GameObject L6book;
+    public GameObject Imp;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class LevelAttempt : MonoBehaviour
         PlayerPrefs.GetInt("lv5", 0);
         PlayerPrefs.GetInt("lv6", 0);
         PlayerPrefs.GetInt("Book", 0);
+       
 
 
 
@@ -66,6 +68,7 @@ public class LevelAttempt : MonoBehaviour
     {
        
         L6book.gameObject.SetActive(PlayerPrefs.GetInt("Book") >= 7);
+        Imp.gameObject.SetActive(PlayerPrefs.GetInt("Book") >= 7);
     }
 
     public void Lv1Click()

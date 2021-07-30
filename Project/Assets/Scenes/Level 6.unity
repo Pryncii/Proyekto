@@ -909,7 +909,7 @@ RectTransform:
   m_Children:
   - {fileID: 355991397}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3705,7 +3705,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5411506989405280982, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5411506989405280982, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4039,7 +4039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3744137161559352023, guid: 6fd072f37549ca84cb180b28a5f5e832, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3744137161559352023, guid: 6fd072f37549ca84cb180b28a5f5e832, type: 3}
       propertyPath: m_LocalScale.x
@@ -4238,7 +4238,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1624000622 stripped
 MonoBehaviour:
@@ -5068,6 +5068,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 2264334098954176302, guid: fcf2d7f514c75724fb5aa56799f90c40, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -135
+      objectReference: {fileID: 0}
     - target: {fileID: 3829072838639163304, guid: fcf2d7f514c75724fb5aa56799f90c40, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 200
@@ -5428,7 +5432,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2085472966
 MonoBehaviour:
@@ -5567,7 +5571,7 @@ PrefabInstance:
       objectReference: {fileID: 106099876131698881, guid: fd76590ba408f1940973ca54671e8258, type: 3}
     - target: {fileID: 7894466722133486679, guid: c2615ca250688d5468a6b4145138f058, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7894466722133486679, guid: c2615ca250688d5468a6b4145138f058, type: 3}
       propertyPath: m_LocalPosition.x

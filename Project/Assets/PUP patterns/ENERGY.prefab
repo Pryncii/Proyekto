@@ -104,6 +104,7 @@ MonoBehaviour:
   duration: 10
   begin: {fileID: 1758532530399486321}
   end: {fileID: 8379822349826079639}
+  Coffee: {fileID: 4592163424016518713, guid: c1ce7ea04f1339b4496141e1fe579497, type: 3}
 --- !u!61 &1758532530399486334
 BoxCollider2D:
   m_ObjectHideFlags: 0

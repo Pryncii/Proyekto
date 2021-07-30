@@ -54,8 +54,8 @@ public class coffee : MonoBehaviour
         
         anim.SetTrigger("Attack");
         target = GameObject.FindGameObjectWithTag("Here").GetComponent<Transform>();
-        
 
+       
         StartCoroutine(Go());
 
     }
@@ -64,7 +64,7 @@ public class coffee : MonoBehaviour
 
     {
         yield return new WaitForSeconds(0.3f);
-       
+        Instantiate(effect, transform.position, Quaternion.identity);
         anim.SetTrigger("Attack");
         StartCoroutine(Idle());
 
@@ -75,7 +75,9 @@ public class coffee : MonoBehaviour
     {
         yield return new WaitForSeconds(0.6f);
         target = GameObject.FindGameObjectWithTag("Playz").GetComponent<Transform>();
-     
+        transform.localScale = new Vector3(-0.3f, 0.3f, 1f);
+        
+
     }
 
      public void OnTriggerEnter2D(Collider2D other)
@@ -108,8 +110,35 @@ public class coffee : MonoBehaviour
                 StartCoroutine(Attack());
                 wait = startattack;
                 Instantiate(barky, transform.position, Quaternion.identity);
+               
             }
         }
+    }
+
+    public void Specialwoof()
+    {
+        
+            if (gameObject.activeSelf == true)
+            {
+            Instantiate(effect, transform.position, Quaternion.identity);
+            StartCoroutine(Attack());
+               
+                Instantiate(barky, transform.position, Quaternion.identity);
+                transform.localScale = new Vector3(-1.5f, 1.5f, 1f);
+            }
+       
+    }
+
+    public void woofy()
+    {
+      
+            if (gameObject.activeSelf == true)
+            {
+                StartCoroutine(Attack());
+               
+                Instantiate(barky, transform.position, Quaternion.identity);
+            }
+        
     }
 
 }

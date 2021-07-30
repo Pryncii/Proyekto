@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4592163424016518716
 Transform:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.57, y: 3.4615018}
+    oldSize: {x: 4.57, y: 3.46}
     newSize: {x: 4.577948, y: 3.46}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   camAnim: {fileID: 0}
   Player: {fileID: 0}
   wait: 0
-  startattack: 0
+  startattack: 13
   jumpy: {fileID: 535563105689056248, guid: 5e75b9fb093a398439b6cecee3616613, type: 3}
   barky: {fileID: 535563105689056248, guid: eb1f73b41f906eb49b01309e3aa15d1e, type: 3}
   scoring: {fileID: 0}

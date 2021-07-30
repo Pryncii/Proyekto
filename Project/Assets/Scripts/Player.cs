@@ -706,7 +706,12 @@ public class Player : MonoBehaviour, IUnityAdsListener
     public void Special()
     {
 
-
+        if (PlayerPrefs.GetInt("coff", 0) == 1)
+        {
+            Coffee = FindObjectOfType<coffee>().gameObject;
+            coffee Total = Coffee.GetComponent<coffee>();
+            Total.Specialwoof();
+        }
 
         Hero.SetTrigger("Attack");
 
@@ -790,7 +795,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
     public void DamageUpOne()
     {
-        if (PlayerPrefs.GetInt("TotalScore", 0) >= 5000)
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 3000)
         {
             PlayerPrefs.SetInt("Damage", 200);
         }
@@ -798,7 +803,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
     public void DamageDownOne()
     {
-        if (PlayerPrefs.GetInt("TotalScore", 0) >= 5000)
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 3000)
         {
             PlayerPrefs.SetInt("Damage", 100);
         }
@@ -806,7 +811,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
     public void SpeedUpOne()
     {
-        if (PlayerPrefs.GetInt("TotalScore", 0) >= 10000)
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 5000)
         {
             PlayerPrefs.SetInt("StartAttack", 2);
         }
@@ -814,7 +819,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
     public void SpeedDownOne()
     {
-        if (PlayerPrefs.GetInt("TotalScore", 0) >= 10000)
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 5000)
         {
             PlayerPrefs.SetInt("StartAttack", 3);
         }
@@ -822,7 +827,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
     public void SpecialUpOne()
     {
-        if (PlayerPrefs.GetInt("TotalScore", 0) >= 15000)
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 10000)
         {
             PlayerPrefs.SetInt("StartSpecial", 20);
         }
@@ -830,7 +835,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
     public void SpecialDownOne()
     {
-        if (PlayerPrefs.GetInt("TotalScore", 0) >= 15000)
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 10000)
         {
             PlayerPrefs.SetInt("StartSpecial", 25);
         }
@@ -861,6 +866,12 @@ public class Player : MonoBehaviour, IUnityAdsListener
             GetComponent<SpriteRenderer>().color = new Color(1f, 0.5f, 0.5f, 0.5f);
             Instantiate(eff, transform.position, Quaternion.identity);
             StartCoroutine(NormalToo());
+            if (PlayerPrefs.GetInt("coff", 0) == 1)
+            {
+                Coffee = FindObjectOfType<coffee>().gameObject;
+                coffee Total = Coffee.GetComponent<coffee>();
+                Total.woofy();
+            }
         }
 
         if (other.CompareTag("leg"))

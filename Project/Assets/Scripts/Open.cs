@@ -14,6 +14,8 @@ public class Open : MonoBehaviour
     public GameObject spspd2;
     public GameObject hp1;
     public GameObject hp2;
+    public GameObject c1;
+    public GameObject c2;
 
 
 
@@ -26,12 +28,14 @@ public class Open : MonoBehaviour
         HideAndShowButtonsspd();
         HideAndShowButtonspspd();
         HideAndShowButtonhp();
+        HideAndShowButtoncoffee();
 
         PlayerPrefs.GetInt("HiddenButton", 1);
         PlayerPrefs.GetInt("HidButton", 1);
         PlayerPrefs.GetInt("spdButton", 1);
         PlayerPrefs.GetInt("spspdButton", 1);
         PlayerPrefs.GetInt("hpButton", 1);
+        PlayerPrefs.GetInt("coff", 0);
     }
     void HideAndShowButtons()
     {
@@ -65,6 +69,12 @@ public class Open : MonoBehaviour
         hp2.gameObject.SetActive(PlayerPrefs.GetInt("hpButton", 1) != 2);
     }
 
+    void HideAndShowButtoncoffee()
+    {
+        c1.gameObject.SetActive(PlayerPrefs.GetInt("coff", 0) == -1);
+        c2.gameObject.SetActive(PlayerPrefs.GetInt("coff", 0) == 1);
+    }
+
     public void Healthwhenclickbutton1()
     {
         
@@ -93,7 +103,7 @@ public class Open : MonoBehaviour
     }
     public void Damagewhenclickbutton2()
     {
-        if (PlayerPrefs.GetInt("TotalScore", 0) >= 5000)
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 3000)
         {
             PlayerPrefs.SetInt("HidButton", 2);
             PlayerPrefs.Save();
@@ -112,7 +122,7 @@ public class Open : MonoBehaviour
     }
     public void Speedwhenclickbutton2()
     {
-        if (PlayerPrefs.GetInt("TotalScore", 0) >= 10000)
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 5000)
         {
             PlayerPrefs.SetInt("spdButton", 2);
             PlayerPrefs.Save();
@@ -130,7 +140,7 @@ public class Open : MonoBehaviour
     }
     public void Specialwhenclickbutton2()
     {
-        if (PlayerPrefs.GetInt("TotalScore", 0) >= 15000)
+        if (PlayerPrefs.GetInt("TotalScore", 0) >= 10000)
         {
             PlayerPrefs.SetInt("spspdButton", 2);
             PlayerPrefs.Save();
@@ -154,5 +164,22 @@ public class Open : MonoBehaviour
             PlayerPrefs.Save();
             HideAndShowButtonhp();
         }
+    }
+
+    public void Coffeewhenclickbutton1()
+    {
+
+        PlayerPrefs.SetInt("coff", 1);
+        PlayerPrefs.Save();
+        HideAndShowButtoncoffee();
+
+    }
+    public void Coffeewhenclickbutton2()
+    {
+        
+            PlayerPrefs.SetInt("coff", -1);
+            PlayerPrefs.Save();
+            HideAndShowButtoncoffee();
+        
     }
 }

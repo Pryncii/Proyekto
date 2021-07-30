@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4774041421873782953}
   - component: {fileID: 3574962949382720075}
   - component: {fileID: 1492320813903596040}
+  - component: {fileID: 137813984846880411}
   m_Layer: 7
   m_Name: BULLCHARGE
   m_TagString: Untagged
@@ -168,3 +169,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.3, y: 4.5}
   m_EdgeRadius: 0
+--- !u!114 &137813984846880411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7546616614103525032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a628d04939923c7449057bf93729a63a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 10

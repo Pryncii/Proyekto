@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 535890646874012047}
   - component: {fileID: 535890646874012046}
   - component: {fileID: 1653839268613677520}
+  - component: {fileID: 966867737442867104}
   m_Layer: 13
   m_Name: INSECT SWARM ATK
   m_TagString: Enemy
@@ -266,3 +267,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &966867737442867104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535890646874012045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a628d04939923c7449057bf93729a63a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 15

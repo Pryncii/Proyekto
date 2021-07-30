@@ -2273,7 +2273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655323575928775748, guid: 6eacbfbd595e2ee41bf519f0f385bb41, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1655323575928775748, guid: 6eacbfbd595e2ee41bf519f0f385bb41, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3313,7 +3313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5204838914511968368, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5204838914511968368, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5058,9 +5058,9 @@ MonoBehaviour:
   - {fileID: 106099876131698881, guid: fd76590ba408f1940973ca54671e8258, type: 3}
   - {fileID: 106099876131698881, guid: 34af90658634479479437c3bef4f5e02, type: 3}
   - {fileID: 106099876131698881, guid: 768975888906b864685218a0428e7ee6, type: 3}
-  starttimebtwspawn: 2
+  starttimebtwspawn: 2.5
   decreasetime: 0.01
-  minTime: 1
+  minTime: 1.2
 --- !u!114 &2107834205 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5630292731250163191, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}

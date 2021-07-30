@@ -482,7 +482,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.11875
+  orthographic size: 5.484375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2448,9 +2448,9 @@ MonoBehaviour:
   - {fileID: 4912084539715013007, guid: 6dd19755ab3828f42a7e6fd33937735a, type: 3}
   - {fileID: 9217955205487346494, guid: cbd8f4509d00ad64d85dea58663d5ad5, type: 3}
   - {fileID: 2242061137450721822, guid: 955ceafc0e50e084eb731a7f3d5de5f2, type: 3}
-  starttimebtwspawn: 1.5
+  starttimebtwspawn: 1.7
   decreasetime: 0.01
-  minTime: 1
+  minTime: 1.2
 --- !u!1001 &2114221503
 PrefabInstance:
   m_ObjectHideFlags: 0

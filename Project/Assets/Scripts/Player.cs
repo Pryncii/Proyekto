@@ -12,7 +12,8 @@ using UnityEngine.EventSystems;
 public class Player : MonoBehaviour, IUnityAdsListener
 
 {
-
+    public GameObject Coffee;
+    public GameObject tiks;
     public Animator Hero;
     public GameObject SpecialButton;
     public GameObject AttButton;
@@ -32,7 +33,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
     public LayerMask Swarme;
     public float attackRange;
     public Transform attackPos;
-    private float wait;
+    public float wait;
     public float startattack;
     private float Specialwait;
     public float startspecial;
@@ -63,7 +64,7 @@ public class Player : MonoBehaviour, IUnityAdsListener
     public GameObject ShadowBarrier;
     public GameObject ButtonControl;
     public Transform shotPoint;
-
+    static int loadcount = 0;
     string mySurfacingId = "rewardedVideo";
 
 #if UNITY_IOS
@@ -92,13 +93,45 @@ public class Player : MonoBehaviour, IUnityAdsListener
         startattack = PlayerPrefs.GetInt("StartAttack", 3);
        startspecial = PlayerPrefs.GetInt("StartSpecial", 25);
         PlayerPrefs.GetInt("Special", 0);
-        
+        loadcount++;
         windblade.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 1);
         Lavaspread.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 2);
         Waterjet.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 3);
         ShadowBarrier.gameObject.SetActive(PlayerPrefs.GetInt("Special") == 4);
         cooldownspecial.gameObject.SetActive(PlayerPrefs.GetInt("Special") >= 1);
+        Coffee.gameObject.SetActive(PlayerPrefs.GetInt("coff", 0) == 1);
        
+        PlayerPrefs.GetInt("coff", 0);
+       
+
+
+        if (PlayerPrefs.GetInt("coff", 0) == 1)
+        {
+            Instantiate(Coffee, transform.position, Quaternion.identity);
+            
+        }
+        else
+        {
+            Coffee.SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt("coff", 0) == 0)
+        {
+           
+            Coffee.SetActive(false);
+        }
+        else
+        {
+            Coffee.SetActive(true);
+            
+        }
+
+
+
+
+
+
+
 
     }
 
@@ -131,8 +164,11 @@ public class Player : MonoBehaviour, IUnityAdsListener
         if (health <= 0)
         {
 
+            if (loadcount % 3 == 0)
+            {
+                ShowInterstitialAd();
+            }
 
-            ShowInterstitialAd();
             GO.SetActive(true);
             gameObject.SetActive(false);
             Instantiate(eff, transform.position, Quaternion.identity);
@@ -398,7 +434,10 @@ public class Player : MonoBehaviour, IUnityAdsListener
 
         {
 
+           
 
+
+            
             enemiesToDamage[t].GetComponent<Tiktik>().health -= damage;
 
             camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
@@ -594,6 +633,12 @@ public class Player : MonoBehaviour, IUnityAdsListener
     {
         Attack.Play();
         Hero.SetTrigger("Attack");
+        if  (PlayerPrefs.GetInt("coff", 0) == 1)
+        {
+            Coffee = FindObjectOfType<coffee>().gameObject;
+            coffee Total = Coffee.GetComponent<coffee>();
+            Total.woof();
+        }
 
         if (wait <= 0)
         {

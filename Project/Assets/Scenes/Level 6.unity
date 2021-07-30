@@ -576,7 +576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1723734713088917846, guid: ad975eae62d89a54d90754710beb8a96, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 1723734713088917846, guid: ad975eae62d89a54d90754710beb8a96, type: 3}
       propertyPath: m_LocalScale.y
@@ -909,7 +909,7 @@ RectTransform:
   m_Children:
   - {fileID: 355991397}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3705,7 +3705,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5411506989405280982, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5411506989405280982, guid: 02969336ca2e35a4abd189921ec219a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4011,7 +4011,7 @@ RectTransform:
   m_Children:
   - {fileID: 365444055}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4039,7 +4039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3744137161559352023, guid: 6fd072f37549ca84cb180b28a5f5e832, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3744137161559352023, guid: 6fd072f37549ca84cb180b28a5f5e832, type: 3}
       propertyPath: m_LocalScale.x
@@ -4238,7 +4238,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1624000622 stripped
 MonoBehaviour:
@@ -5455,9 +5455,9 @@ MonoBehaviour:
   - {fileID: 4912084539715013007, guid: 92c2ffa944e4f4d48b0b6764ac0c6e75, type: 3}
   - {fileID: 9217955205487346494, guid: e7a4d2eddec5dc54db7cbb3b2dc7d158, type: 3}
   - {fileID: 2242061137450721822, guid: 42cd1c717543f2a4eab536d1b819cd25, type: 3}
-  starttimebtwspawn: 1.8
+  starttimebtwspawn: 2
   decreasetime: 0.01
-  minTime: 0.9
+  minTime: 1
 --- !u!114 &2107834205 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5630292731250163191, guid: 02bc975d41423dc4bbc94eddb848c0af, type: 3}
@@ -5567,7 +5567,7 @@ PrefabInstance:
       objectReference: {fileID: 106099876131698881, guid: fd76590ba408f1940973ca54671e8258, type: 3}
     - target: {fileID: 7894466722133486679, guid: c2615ca250688d5468a6b4145138f058, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7894466722133486679, guid: c2615ca250688d5468a6b4145138f058, type: 3}
       propertyPath: m_LocalPosition.x
